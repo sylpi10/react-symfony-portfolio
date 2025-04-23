@@ -1,0 +1,20 @@
+###> symfony/framework-bundle ###
+portfolioBack/.env
+portfolioBack/.env.dev
+portfolioBack/.env.local
+portfolioBack/.env.local.php
+portfolioBack/.env.*.local
+portfolioBack/config/secrets/prod/prod.decrypt.private.php
+back/config/secrets/prod/prod.decrypt.private.php
+portfolioBack/public/bundles/
+portfolioBack/var/
+portfolioBack/vendor/
+portfolioBack/.idea
+portfolioBack/.htaccess
+
+### front
+# === Frontend ===
+front/node_modules/
+front/dist/
+front/.env*
+front/.idea

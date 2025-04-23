@@ -18,14 +18,14 @@ const Footer = () => (
                 </a>
                 <div className="text">
                     <h3>Sylvain Pillet</h3>
-                    <h4>Développeur dans les Hautes-Pyrénées</h4>
+                    <h4>Développeur à Toulouse</h4>
                     <a href="mailto:syl.pillet@hotmail.fr">syl.pillet@hotmail.fr</a>
                 </div>
             </div>
             <div className="links">
                 <a
                     href="https://www.linkedin.com/in/sylvain-pillet/"
-                    title="Page Linkedin"
+                    title="Profil Linkedin"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="linkedin"
