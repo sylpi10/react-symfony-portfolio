@@ -16,25 +16,16 @@
       //  flex-direction: column;
       //  align-items: center;
       //}
-      h1 {
-        font-family: effortless, serif;
-        font-size: 2.2rem;
-        text-transform: capitalize;
-        z-index: 12;
-        position: relative;
-        text-align: center;
-
-      }
       .cv-link{
         position: fixed;
-        background-color: $purple;
+        background-color: $main_color;
         color: $yellow;
         align-items: center;
         font-weight: bold;
         gap: 12px;
         top: 60px;
-        //border-top: inset 2px $purple;
-        //border-bottom: inset 2px $purple;
+        //border-top: inset 2px $main_color;
+        //border-bottom: inset 2px $main_color;
         left: 8px;
         z-index: 0;
         padding: 4px;
@@ -52,7 +43,7 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          border: solid $purple 2px;
+          border: solid $main_color 2px;
           padding: 16px 2px;
           @media screen and (max-width: 768px) {
             flex-direction: row;
@@ -71,7 +62,7 @@
           display: flex;
           line-height: 1.2em;
           border-top: 3px solid;
-          border-image: linear-gradient(to right, $purple 0%, #c183cc 100%);
+          border-image: linear-gradient(to right, $main_color 0%, #8398cc 100%);
           border-image-slice: 1;
           margin: auto;
           padding: 30px;
@@ -93,7 +84,7 @@
             gap: 12px;
             flex-wrap: wrap;
             li{
-              color: $purple;
+              color: $main_color;
               background-color: $yellow;
               padding: 10px 12px;
               font-weight: bold;
@@ -121,7 +112,7 @@
           }
           .date{
             position: absolute;
-            background-color: $purple;
+            background-color: $main_color;
             color: #fff;
             line-height: 1.25em;
             top: 18px;
@@ -135,7 +126,7 @@
               border-bottom: 14px solid transparent;
               height: 20px;
               background-color: #fff;
-              color: $purple;
+              color: $main_color;
               top: 0;
             }
           }
@@ -193,14 +184,13 @@
           border-bottom-left-radius: 0;
         }
       }
-
     }
-
   }
 
   .toolkit-wrapper{
-    background-color: $purple;
+    background-color: $main_color;
     display: flex;
+    border-bottom: ridge #fff;
     @media screen and (min-width: 768px) {
       justify-content: flex-start;
     }
@@ -222,7 +212,7 @@
       background-size: contain;
       span{
         font-size: 1.6rem;
-        color: $purple;
+        color: $main_color;
         font-weight: bold;
         transform: rotate(-12deg);
       }
@@ -268,7 +258,7 @@
     gap: 0 0.2rem;
     color: #e2e8f0;
     font-size: 0.9rem;
-    background-color: $purple;
+    background-color: $main_color;
     border-radius: 0.4rem;
     padding: 0.7rem 1rem;
     margin-right: 1rem; // Must used margin-right instead of gap for the loop to be smooth
@@ -285,7 +275,7 @@
 
   .fade {
     pointer-events: none;
-    background: linear-gradient(90deg, $purple, transparent 30%, transparent 70%, $purple);
+    background: linear-gradient(90deg, $main_color, transparent 10%, transparent 20%, $main_color);
     position: absolute;
     inset: 0;
   }

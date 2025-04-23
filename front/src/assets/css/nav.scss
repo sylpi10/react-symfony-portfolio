@@ -14,7 +14,7 @@ header{
   width: 100%;
   padding: 0;
   &.sticky{
-    background-color: $purple;
+    background-color: $main_color;
     height: 62px;
     overflow: visible;
     li.brand{
@@ -51,14 +51,16 @@ header{
         margin-left: -1em;
         padding-left: 0;
         a, a:visited{
-          color: $purple;
+          color: $main_color;
           text-decoration: none;
           margin: 0 var(--spacing, 0px);
           transition: margin .25s;
           position: relative;
-          font-size: 1.2rem;
-          font-family: 'amatic_bold', "sans-serif";
-          letter-spacing: 2px;
+          //font-size: 1.2rem;
+          //font-family: 'montserrat', "sans-serif";
+          font-family: 'quicksand', "sans-serif";
+          //font-family: 'amatic_bold', "sans-serif";
+          letter-spacing: 1px;
           &:hover svg{
             opacity: 1;
           }
@@ -66,7 +68,7 @@ header{
             width: 110px;
             position: absolute;
             top: -26px;
-            left: 28px;
+            left: 32px;
             transform: translate(-50%, 7px) translateZ(0);
             fill: none;
             stroke: var(--stroke, var(--line));
@@ -95,7 +97,7 @@ header{
       }
       li:last-of-type{
         @media screen and (min-width: 768px) {
-          background-color: $purple;
+          background-color: $main_color;
           padding: 4px 8px;
           border-top-right-radius: 20px;
           border-bottom-left-radius: 20px;
@@ -105,7 +107,7 @@ header{
   }
   // mobile
   @media screen and (max-width: 768px) {
-      background-color: $purple;
+      background-color: $main_color;
       height: 62px;
     nav{
       position: relative;
@@ -150,7 +152,7 @@ header{
         display: flex;
         overflow: visible;
         position: absolute;
-        background: linear-gradient(128deg, $purple 65%, #621470);
+        background: linear-gradient(128deg, $main_color 65%, #621470);
         top: 0;
         left: 0;
         right: 0;

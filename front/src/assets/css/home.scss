@@ -8,7 +8,7 @@
     @media screen and (max-width: 768px) {
       padding-bottom: 20px;
     }
-    background: linear-gradient(-128deg, $purple, #5E3365);
+    background: linear-gradient(-128deg, $main_color, #091221);
     display: flex;
     flex-direction: column;
     .presentation{
@@ -87,14 +87,16 @@
         }
         h2{
           color: $yellow;
-          background-color: #43114B;
-          padding: 6px;
-          border-top-right-radius: 20px;
-          border-bottom-left-radius: 20px;
+          background-color: $main_color;
+          padding: 6px 20px;
+          border-radius: 8px;
+          //border-top-right-radius: 60px;
+          //border-bottom-left-radius: 20px;
           z-index: 20;
           margin-top: 0;
-          font-family: 'amatic_bold', serif;
-          letter-spacing: 3px;
+          //font-family: 'amatic_bold', serif;
+          font-family: 'montserrat', serif;
+          letter-spacing: 2px;
           @media screen and (max-width: 768px) {
             margin: 0 auto 20px auto;
             text-align: center;
@@ -156,7 +158,7 @@
     .project-link:active {
       background: var(--color);
       a{
-        color: $purple;
+        color: $main_color;
       }
     }
   }

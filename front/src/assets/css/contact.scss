@@ -10,16 +10,7 @@
     margin: 120px auto 40px auto;
     justify-content: center;
     position: relative;
-    //background: linear-gradient(-128deg, $purple 20%, #5E3365);
-    h1 {
-      font-family: effortless, serif;
-      font-size: 2.2rem;
-      text-transform: capitalize;
-      z-index: 12;
-      position: relative;
-      color: $purple;
-      text-align: center;
-    }
+    //background: linear-gradient(-128deg, $main_color 20%, #5E3365);
     .contact-form{
       width: 74%;
       margin: auto;
@@ -39,7 +30,7 @@
           width: 100%;
           text-align: center;
           &.loading{
-            color: $purple;
+            color: $main_color;
           }
           &.alert-success{
             color: #276c27;
@@ -62,7 +53,7 @@
         input, textarea{
           width: 100%;
           border: none;
-          border-bottom: solid 1px $purple;
+          border-bottom: solid 1px $main_color;
           &:focus, &:active{
             outline: none;
             border: solid 1px $yellow;
@@ -89,7 +80,7 @@
             font-size: 0.75rem;
             background: white;
             padding: 0 8px;
-            color: $purple;
+            color: $main_color;
           }
         }
         #website{
@@ -119,7 +110,7 @@
           &.mail-cta{
             margin: 40px auto;
             &::before{
-              background-color:$purple;
+              background-color:$main_color;
             }
           }
           &:hover::before{
@@ -138,7 +129,7 @@
             text-decoration: none;
             font-weight: bold;
             background-color: #fff;
-            color: $purple;
+            color: $main_color;
             cursor: pointer;
           }
         }

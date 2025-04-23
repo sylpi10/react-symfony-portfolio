@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import profilPic from "../../../public/assets/images/self.png";
+import profilPic from "../../../public/assets/images/avatar.png";
 import shape from "../../../public/assets/images/shape.svg";
 
 const Home = () => {

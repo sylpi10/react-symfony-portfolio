@@ -7,6 +7,12 @@
   font-style: normal;
 }
 @font-face {
+  font-family: 'quicksand';
+  src: url('../fonts/Quicksand-Regular.tff') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'effortless';
   src: url('../fonts/effortless.ttf') format('truetype');
   font-weight: normal;
@@ -27,7 +33,7 @@
 }
 
 //$yellow: #E4D00A;
-//$purple: #642970;
+//$main_color: #642970;
 
 body, html{
   padding: 0;
@@ -52,75 +58,14 @@ a{
   position: relative;
 
 }
-
-footer{
-  background-color: #333;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  color: $yellow;
-  z-index: 16;
-  .footer-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    width: 100%;
-    padding: 40px 0;
-    gap: 20px;
-    flex-wrap: wrap;
-    .brand{
-      display: flex;
-      a.logo-link{
-        margin-right: 18px;
-      }
-      .text{
-        h4{
-          color: #fff;
-        }
-        a{
-          color: #fff;
-          text-decoration: none;
-          &:hover{
-            color: $yellow;
-          }
-        }
-      }
-    }
-
-    .links{
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      a{
-        svg{
-          fill: #fff;
-          transition:all ease .3s;
-        }
-        &:hover{
-          box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
-          & svg{
-            fill: $yellow;
-            transform: scale(1.07);
-          }
-        }
-      }
-    }
-  }
-  .copyright{
-    border-top: solid 1px rgba(228,208,10,.4);
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    height: 40px;
-    align-items: center;
-    span{
-      text-align: center;
-      margin: 0 5px;
-    }
-  }
+main h1{
+  color: $main_color;
+  font-family: effortless, serif;
+  font-size: 2.2rem;
+  text-transform: capitalize;
+  z-index: 12;
+  position: relative;
+  text-align: center;
 }
 
 @import "home";
@@ -129,3 +74,4 @@ footer{
 @import "nav";
 @import "parcours";
 @import "contact";
+@import "footer";
