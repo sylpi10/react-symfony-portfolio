@@ -18,3 +18,4 @@ front/node_modules/
 front/dist/
 front/.env*
 front/.idea
+front/.htaccess
