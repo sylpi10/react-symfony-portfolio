@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import profilPic from "../../../public/assets/images/avatar.png";
 import shape from "../../../public/assets/images/shape.svg";
 import cv from "../../../public/assets/images/Sylvain_Pillet_CV_2025.pdf";
+import frontPic from "../../../public/assets/images/front.png";
+import backyPic from "../../../public/assets/images/back.png";
 import React, {useEffect, useState} from "react";
 
 const Home = () => {
@@ -38,16 +40,19 @@ const Home = () => {
                         </h1>
                         <div className="person-description">
                             <p>
-                                Développeur web basé à Toulouse, j'utilise principalement Symfony pour le backend et React pour le frontend.
-                                Curieux, et passionné par le développement web, je suis actuellement à la recherche d’un poste pour continuer à progresser dans un environnement technique stimulant.
+                                Développeur web basé à <b>Toulouse</b>, j'utilise principalement <b>Symfony</b> et <b>React</b>. <br/>
+                                Curieux, et passionné par le <b>développement web</b>, je suis
+                                en quête d’un environnement technique stimulant pour continuer à apprendre et m’épanouir en équipe.
                             </p>
                         </div>
 
 
                     </div>
-                    <div className={`picture-wrapper`}>
-                        <img src={profilPic} alt="photo de profil" width="300" />
-                        <h2>Sylvain Pillet</h2>
+                    <div className="picture-name-wrapper">
+                        <div className={`picture-name-container`}>
+                            <img src={profilPic} alt="photo de profil" width="300" />
+                            <h2>Sylvain Pillet</h2>
+                        </div>
                     </div>
                 </div>
 
@@ -89,15 +94,27 @@ const Home = () => {
                 <img className="shape" src={shape} alt="" />
             </div>
         </main>
-        {/*<div className="home-description">*/}
-        {/*    <div className="para-container first-para">*/}
-        {/*        <p> Développeur web basé à <b>Toulouse</b>, j'utilise principalement <b>Symfony</b> pour le <b>backend</b> et <b>React</b> pour le <b>frontend</b>.*/}
-        {/*            Curieux, et passionné par le <b>développement web</b>, je suis actuellement à la recherche d’un <b>poste</b> pour continuer à progresser dans un environnement technique stimulant.</p>*/}
-        {/*    </div>*/}
-        {/*    <div className="para-container second-para">*/}
-        {/*        <p>Mon objectif : contribuer à des <b>projets concrets</b>, progresser sur les <b>bonnes pratiques</b>, et évoluer dans une <b>équipe</b> où je pourrai <b>développer mes compétences</b> tout en apportant ma touche.</p>*/}
-        {/*    </div>*/}
-        {/*</div>*/}
+        <div className="home-description">
+            <div className="para-container first-para">
+                <img src={frontPic} alt="Logo react" height={'120'}/>
+                <div className="text">
+                    <p>J'ai un attrait particulier pour le <b>développement frontend</b>. J'aime développer des interfaces simples et limpides, trouver le bon agencement et fluidifier l'utilisation des fonctionnalités.
+                    </p>
+                <p>Je travaille aussi bien avec <b>React</b> qu'avec du natif ou un <b>moteur de templates</b>. </p>
+                </div>
+            <div className="bar"></div>
+            </div>
+            <div className="para-container second-para">
+                <div className="text">
+                <p>La conception de la <b>base de données</b> et la mise en place de ces données est souvent la première étape d'un projet.
+                </p>
+                <p> J'utilise principalement <b>Symfony </b> et <b>Doctrine</b> pour la préparation des données, leur récupération
+                    et l'envoie en <b>frontend</b> que ce soit par une <b>api</b> ou pour un template <b>Twig</b> </p>
+                </div>
+                <img src={backyPic} alt="Logo symfony" height={'120'}/>
+            <div className="bar"></div>
+            </div>
+        </div>
         </>
     );
 };
