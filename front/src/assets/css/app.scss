@@ -58,7 +58,7 @@ a{
   position: relative;
 
 }
-main h1{
+main h1, main .section-title{
   color: $main_color;
   font-family: effortless, serif;
   font-size: 2.2rem;
@@ -66,6 +66,10 @@ main h1{
   z-index: 12;
   position: relative;
   text-align: center;
+}
+section:not(#home){
+  padding-top: 20px;
+  position: relative;
 }
 
 @import "home";

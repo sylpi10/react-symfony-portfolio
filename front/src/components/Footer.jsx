@@ -4,7 +4,11 @@ import cv from "../../public/assets/images/Sylvain_Pillet_CV_2025.pdf";
 import CvIcon from "./CvIcon";
 
 const Footer = () => {
+    const today = new Date();
+    const actualYear = today.getFullYear();
+
     return (
+
         <footer>
             <div className="footer-container">
                 <div className="brand">
@@ -62,7 +66,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="copyright">
-                <span>© 2017 Copyright</span> - <span> S Pillet</span>
+                <span>© 2017 - {actualYear} Copyright</span> - <span> S Pillet</span>
             </div>
         </footer>
     )

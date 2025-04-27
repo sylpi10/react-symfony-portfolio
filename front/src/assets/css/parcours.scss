@@ -190,7 +190,6 @@
   .toolkit-wrapper{
     background-color: $main_color;
     display: flex;
-    border-bottom: ridge #fff;
     @media screen and (min-width: 768px) {
       justify-content: flex-start;
     }

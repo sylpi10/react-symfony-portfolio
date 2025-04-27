@@ -25,7 +25,7 @@ const About = () => {
         <main className="section-container about-container">
             <div className="about-me-wrapper">
                 <div className="name">
-                    <h1>Sylvain, {age} ans</h1>
+                    <h2 className={"section-title"}>Sylvain, {age} ans</h2>
                     <img
                         src={arrow}// Update the path as necessary
                         className="arrow"

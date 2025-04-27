@@ -5,18 +5,18 @@ import {sendEmail} from "../../service/api.js";
 
 const Contact = () => {
 
-    const location = useLocation();
-
-    useEffect(() => {
-        // Check if the current path is '/contact'
-        if (location.pathname === '/contact') {
-            document.body.classList.add('contact-page');
-        }
-        // Clean up: remove the class when navigating away from '/contact'
-        return () => {
-            document.body.classList.remove('contact-page');
-        };
-    }, [location.pathname]);
+    // const location = useLocation();
+    //
+    // useEffect(() => {
+    //     // Check if the current path is '/contact'
+    //     if (location.pathname === '/contact') {
+    //         document.body.classList.add('contact-page');
+    //     }
+    //     // Clean up: remove the class when navigating away from '/contact'
+    //     return () => {
+    //         document.body.classList.remove('contact-page');
+    //     };
+    // }, [location.pathname]);
 
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(null);
@@ -42,7 +42,7 @@ const Contact = () => {
     return (
         <main className="section-container">
             <div className="section-wrapper contact-wrapper">
-                <h1>On discute ?</h1>
+                <h2 className={"section-title"}>On discute ?</h2>
                 <ContactForm handleSubmit = {handleSubmit} loading={loading} success={success} error={error} />
             </div>
         </main>

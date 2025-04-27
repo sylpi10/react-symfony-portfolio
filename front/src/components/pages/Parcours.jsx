@@ -56,7 +56,7 @@ const Parcours = () => {
         <main className="section-container parcours-container">
             <div className="parcours-wrapper">
                 <div className="title">
-                    <h1>Mon parcours</h1>
+                    <h2 className={"section-title"}>Mon parcours</h2>
                     <div className="cv-link">
                         <a
                             href={"cv"}
