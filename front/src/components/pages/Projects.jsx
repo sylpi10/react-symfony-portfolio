@@ -13,6 +13,7 @@ const Projects = () => {
                 const loadedProjects = await getProjects();
                 setProjects(loadedProjects); // Set fetched data to state
             } catch (e) {
+                console.log("erreur: ", e);
                 setError("Failed to load projects"); // Set error if fetching fails
             } finally {
                 setLoading(false); // Turn off loading state

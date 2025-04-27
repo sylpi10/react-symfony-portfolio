@@ -58,8 +58,8 @@
           }
           @media screen and (min-width: 768px) {
             span.first-letter {
-              font-size: 14rem;
-              line-height: 132px;
+              font-size: 7rem;
+              //line-height: 132px;
             }
           }
           @media screen and (max-width: 768px) {
@@ -120,56 +120,92 @@
       z-index: 12;
       min-width: 180px;
       margin: auto;
-      --b: 3px;   /* border thickness */
-      --s: .45em; /* size of the corner */
-      --color: #E4D00A;
+      //background-color: $yellow;
+      background-color: transparent;
       padding: 0;
+      border: none;
       height: 50px;
-      color: var(--color);
-      --_p: var(--s);
-      background:
-              conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-              var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-      transition: .3s linear, color 0s, background-color 0s;
-      outline: var(--b) solid #0000;
-      outline-offset: .6em;
-      font-size: 16px;
-      font-weight: bold;
-      border: 0;
-      //padding: 0;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
       a{
+        position: relative;
+        //color: $main_color;
+        color: $yellow;
         text-align: center;
         cursor: pointer;
-        color: $yellow;
         display: flex;
         justify-content: center;
+        font-size: 1.4rem;
+        &:hover{
+          font-weight: bold;
+          svg{
+            --stroke: var(--line-active);
+            --stroke-delay: .1s;
+            --offset: 180px;
+            stroke-dashoffset: 124px;
+            //transition: stroke-dashoffset .35s;
+            z-index: -1;
+          }
+        }
+        //svg{
+        //  opacity: 1;
+        //}
+        svg {
+          width: 136px;
+          position: absolute;
+          top: -30px;
+          //left: 32px;
+          //transform: translate(0, 7px) translateZ(0);
+          fill: none;
+          stroke: var(--stroke, var(--line));
+          stroke-linecap: round;
+          stroke-width: 2px;
+          stroke-dasharray: var(--offset, 69px) 278px;
+          stroke-dashoffset: 361px;
+          transition: stroke .25s ease var(--stroke-delay, 0s), stroke-dasharray .35s, stroke-dashoffset .35s;
+          opacity: 1;
+          --stroke: var(--line-active);
+          --stroke-delay: .1s;
+          --offset: 180px;
+        }
       }
     }
 
-    .project-link:hover,
-    .project-link:focus-visible{
-      --_p: 0px;
-      outline-color: var(--color);
-      outline-offset: .05em;
-    }
-    .project-link:active {
-      background: var(--color);
-      a{
-        color: $main_color;
-      }
-    }
+    //.project-link:hover,
+    //.project-link:focus-visible{
+    //  --_p: 0px;
+    //  outline-color: var(--color);
+    //  outline-offset: .05em;
+    //}
+    //.project-link:active {
+    //  background: var(--color);
+    //  a{
+    //    color: $main_color;
+    //  }
+    //}
   }
 }
 .home-description{
-  padding: 40px 60px;
+  //padding: 40px 60px;
   display: flex;
-  gap: 40px;
-  p{
-    font-family: 'montserrat', 'sans-serif';
+  //gap: 40px;
+  .para-container{
+    padding: 20px;
+    position: relative;
+    &.first-para{
+      background-color: $yellow;
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+      padding-right: 60px;
+      width: calc(50% + 80px);
+    }
+    &.second-para{
+      //background-image: url("public/assets/images/react.svg");
+      width: 50%;
+    }
+    p{
+      font-family: 'montserrat', 'sans-serif';
+    }
+
   }
+
   @media screen and (max-width: 768px) {
     padding: 20px;
   }

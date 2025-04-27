@@ -34,7 +34,7 @@ function NavBar() {
         <header className="header" ref={headerRef}>
             <nav className={`navbar ${isHomePage ? "default-menu-class" : ""} ${isMobileOpen ? "mobile-nav" : ""}`}>
                 <span className="brand">
-                    <Link to="/home" onClick={handleLinkClick}>
+                    <Link to="/" onClick={handleLinkClick}>
                         <img src={logo} className="logo" alt="logo" width="39" />
                     </Link>
                 </span>
