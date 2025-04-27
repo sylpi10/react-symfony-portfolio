@@ -29,9 +29,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         height: fit-content;
         max-height: 80%;
-        align-items: flex-start;
+        min-width: 24%;
+        max-width: 50%;
         h1{
           @media screen and (min-width: 768px) {
             font-size: 4rem;
@@ -39,10 +41,10 @@
           @media screen and (max-width: 768px) {
             font-size: 2rem;
           }
-          display: flex;
+          //display: flex;
           margin: 0;
           padding-bottom: 40px;
-          flex-direction: column;
+          //flex-direction: column;
           font-family: 'effortless', serif;
           background: -webkit-linear-gradient($yellow 54%, orange);
           -webkit-background-clip: text;
@@ -56,25 +58,81 @@
           .dev{
             align-items: flex-start;
           }
-          @media screen and (min-width: 768px) {
-            span.first-letter {
-              font-size: 7rem;
-              //line-height: 132px;
-            }
+          //@media screen and (min-width: 768px) {
+          //  span.first-letter {
+          //    font-size: 7rem;
+          //    //line-height: 132px;
+          //  }
+          //}
+          //@media screen and (max-width: 768px) {
+          //  span.first-letter{
+          //    font-size: 6rem;
+          //    line-height: 50px;
+          //  }
+          //}
+
+          .cursor {
+            display: inline-block;
+            width: 12px;
+            background: transparent;
+            animation: blink 1s infinite;
+            margin-left: 4px;
           }
-          @media screen and (max-width: 768px) {
-            span.first-letter{
-              font-size: 6rem;
-              line-height: 50px;
+
+          @keyframes blink {
+            0%, 50% {
+              opacity: 1;
+            }
+            50.01%, 100% {
+              opacity: 0;
             }
           }
 
         }
+        .person-description{
+          position: relative;
+          display: inline-block;
+          min-width: 25%;
+          max-width: 74%;
+          color: $yellow;
+          padding: 14px 20px;
+          overflow: hidden;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 1px solid $yellow;
+            border-left: 1px solid $yellow;
+            animation: border-appear 1s forwards;
+            animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transform: skewX(1deg) skewY(-1deg);
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 1px solid $yellow;
+            border-right: 1px solid $yellow;
+            animation: border-appear 1s forwards;
+            animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            animation-delay: .6s;
+            transform: skewX(1deg) skewY(-1deg);
+          }
+        }
       }
       .picture-wrapper{
+        max-width: 50%;
+        width: 40%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        z-index: 20;
         img{
           width: 300px;
           height: auto;
@@ -168,25 +226,10 @@
         }
       }
     }
-
-    //.project-link:hover,
-    //.project-link:focus-visible{
-    //  --_p: 0px;
-    //  outline-color: var(--color);
-    //  outline-offset: .05em;
-    //}
-    //.project-link:active {
-    //  background: var(--color);
-    //  a{
-    //    color: $main_color;
-    //  }
-    //}
   }
 }
 .home-description{
-  //padding: 40px 60px;
   display: flex;
-  //gap: 40px;
   .para-container{
     padding: 20px;
     position: relative;
@@ -197,7 +240,6 @@
       width: calc(50% + 80px);
     }
     &.second-para{
-      //background-image: url("public/assets/images/react.svg");
       width: 50%;
     }
     p{
@@ -211,5 +253,20 @@
   }
   @media screen and (max-width: 560px) {
     padding: 14px;
+  }
+}
+
+@keyframes border-appear {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 100%;
+    height: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
   }
 }

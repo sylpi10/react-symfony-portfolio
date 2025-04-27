@@ -1,24 +1,48 @@
 import { Link } from "react-router-dom";
 import profilPic from "../../../public/assets/images/avatar.png";
 import shape from "../../../public/assets/images/shape.svg";
+import {useEffect, useState} from "react";
 
 const Home = () => {
+
+    const text = "Développeur\nFullstack";
+    const [displayedText, setDisplayedText] = useState('');
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        if (index < text.length) {
+            const timeout = setTimeout(() => {
+                setDisplayedText(text.slice(0, index + 1)); // slice jusqu'à index + 1
+                setIndex(index + 1); // avance index
+            }, 160);
+
+            return () => clearTimeout(timeout);
+        }
+    }, [index, text]);
+
     return (
         <>
         <main className="homepage">
             <div className="hero-area">
                 <div className="presentation">
                     <div className="person">
-                        <h1>
-              <span className="concepteur title">
-                <span className="first-letter">D</span>éveloppeur
-              </span>
-                            <span className="dev title">
-                <span className="first-letter">F</span>ullstack
-              </span>
+                        <h1 className="typewriter">
+                            {displayedText.split('\n').map((line, i) => (
+                                <span key={i}>
+                                            {line}
+                                    {i !== displayedText.split('\n').length - 1 && <br />}
+                                </span>
+                            ))}
+                            <span className="cursor">|</span>
                         </h1>
+                        <div className="person-description">
+                            <p>
+                                Développeur web basé à Toulouse, j'utilise principalement Symfony pour le backend et React pour le frontend.
+                                Curieux, et passionné par le développement web, je suis actuellement à la recherche d’un poste pour continuer à progresser dans un environnement technique stimulant.
+                            </p>
+                        </div>
                     </div>
-                    <div className="picture-wrapper">
+                    <div className={`picture-wrapper`}>
                         <img src={profilPic} alt="photo de profil" width="300" />
                         <h2>Sylvain Pillet</h2>
                     </div>
@@ -34,15 +58,15 @@ const Home = () => {
                 <img className="shape" src={shape} alt="" />
             </div>
         </main>
-        <div className="home-description">
-            <div className="para-container first-para">
-                <p> Développeur web basé à <b>Toulouse</b>, j'utilise principalement <b>Symfony</b> pour le <b>backend</b> et <b>React</b> pour le <b>frontend</b>.
-                    Curieux, et passionné par le <b>développement web</b>, je suis actuellement à la recherche d’un <b>poste</b> pour continuer à progresser dans un environnement technique stimulant.</p>
-            </div>
-            <div className="para-container second-para">
-                <p>Mon objectif : contribuer à des <b>projets concrets</b>, progresser sur les <b>bonnes pratiques</b>, et évoluer dans une <b>équipe</b> où je pourrai <b>développer mes compétences</b> tout en apportant ma touche.</p>
-            </div>
-        </div>
+        {/*<div className="home-description">*/}
+        {/*    <div className="para-container first-para">*/}
+        {/*        <p> Développeur web basé à <b>Toulouse</b>, j'utilise principalement <b>Symfony</b> pour le <b>backend</b> et <b>React</b> pour le <b>frontend</b>.*/}
+        {/*            Curieux, et passionné par le <b>développement web</b>, je suis actuellement à la recherche d’un <b>poste</b> pour continuer à progresser dans un environnement technique stimulant.</p>*/}
+        {/*    </div>*/}
+        {/*    <div className="para-container second-para">*/}
+        {/*        <p>Mon objectif : contribuer à des <b>projets concrets</b>, progresser sur les <b>bonnes pratiques</b>, et évoluer dans une <b>équipe</b> où je pourrai <b>développer mes compétences</b> tout en apportant ma touche.</p>*/}
+        {/*    </div>*/}
+        {/*</div>*/}
         </>
     );
 };
