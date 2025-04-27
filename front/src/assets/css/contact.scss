@@ -7,9 +7,10 @@
   .contact-wrapper {
     display: flex;
     flex-direction: column;
-    margin: 120px auto 40px auto;
+    margin: 120px auto 0 auto;
     justify-content: center;
     position: relative;
+    padding-bottom: 60px;
     //background: linear-gradient(-128deg, $main_color 20%, #5E3365);
     .contact-form{
       width: 74%;
@@ -54,6 +55,7 @@
           width: 100%;
           border: none;
           border-bottom: solid 1px $main_color;
+          padding: 20px;
           &:focus, &:active{
             outline: none;
             border: solid 1px $yellow;

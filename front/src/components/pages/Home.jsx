@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import profilPic from "../../../public/assets/images/avatar.png";
 import shape from "../../../public/assets/images/shape.svg";
-import {useEffect, useState} from "react";
+import cv from "../../../public/assets/images/Sylvain_Pillet_CV_2025.pdf";
+import React, {useEffect, useState} from "react";
 
 const Home = () => {
 
@@ -41,6 +42,8 @@ const Home = () => {
                                 Curieux, et passionné par le développement web, je suis actuellement à la recherche d’un poste pour continuer à progresser dans un environnement technique stimulant.
                             </p>
                         </div>
+
+
                     </div>
                     <div className={`picture-wrapper`}>
                         <img src={profilPic} alt="photo de profil" width="300" />
@@ -48,13 +51,35 @@ const Home = () => {
                     </div>
                 </div>
 
-                <button className="project-link">
-                    <a  href={'#projets'}>Projets
-                        <svg viewBox="0 0 70 36">
-                            <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
-                        </svg>
-                    </a>
-                </button>
+                <div className="links-wrapper">
+                    <button className="cv-link link-button">
+                        <a href={cv} title="Télécharger Mon CV en pdf" download >
+                            <svg
+                                width="36px"
+                                height="36px"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M12 12V19M12 19L9.75 16.6667M12 19L14.25 16.6667M6.6 17.8333C4.61178 17.8333 3 16.1917 3 14.1667C3 12.498 4.09438 11.0897 5.59198 10.6457C5.65562 10.6268 5.7 10.5675 5.7 10.5C5.7 7.46243 8.11766 5 11.1 5C14.0823 5 16.5 7.46243 16.5 10.5C16.5 10.5582 16.5536 10.6014 16.6094 10.5887C16.8638 10.5306 17.1284 10.5 17.4 10.5C19.3882 10.5 21 12.1416 21 14.1667C21 16.1917 19.3882 17.8333 17.4 17.8333"
+                                    stroke="#E4D00A"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                            CV
+                        </a>
+                    </button>
+                    <button className="project-link link-button">
+                        <a  href={'#projets'} title={"Voir les projets"}>Projets
+                            {/*<svg viewBox="0 0 70 36">*/}
+                            {/*    <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />*/}
+                            {/*</svg>*/}
+                        </a>
+                    </button>
+                </div>
+
                 <img className="shape" src={shape} alt="" />
             </div>
         </main>

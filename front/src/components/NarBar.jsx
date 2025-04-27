@@ -44,8 +44,8 @@ function NavBar(props) {
                         {[
                             { path: "/", label: "Accueil" },
                             { path: "/#projets", label: "Projets" },
-                            { path: "/#parcours", label: "Parcours" },
                             { path: "/#a-propos", label: "À propos" },
+                            { path: "/#parcours", label: "Parcours" },
                             { path: "/#contact", label: "Contact" }
                         ].map((link) => (
                             <li key={link.path}>
@@ -62,8 +62,8 @@ function NavBar(props) {
                         {[
                             { path: "#home", label: "Accueil" },
                             { path: "#projets", label: "Projets" },
-                            { path: "#parcours", label: "Parcours" },
                             { path: "#a-propos", label: "À propos" },
+                            { path: "#parcours", label: "Parcours" },
                             { path: "#contact", label: "Contact" }
                         ].map((link) => (
                             <li key={link.path}>

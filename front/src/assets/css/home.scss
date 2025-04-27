@@ -100,7 +100,7 @@
           &::before {
             content: '';
             position: absolute;
-            top: 2px;
+            top: 3px;
             left: 0;
             width: 0;
             height: 0;
@@ -113,7 +113,7 @@
           &::after {
             content: '';
             position: absolute;
-            bottom: 2px;
+            bottom: 3px;
             right: 0;
             width: 0;
             height: 0;
@@ -174,55 +174,68 @@
       }
     }
 
-    .project-link {
-      z-index: 12;
-      min-width: 180px;
+    .links-wrapper{
+      display: flex;
       margin: auto;
-      //background-color: $yellow;
-      background-color: transparent;
-      padding: 0;
-      border: none;
-      height: 50px;
-      a{
+      gap: 20px;
+      .link-button{
+        z-index: 12;
+        color: #fff;
         position: relative;
-        //color: $main_color;
-        color: $yellow;
-        text-align: center;
-        cursor: pointer;
+        border: solid 1px $yellow;
+        width: 140px;
         display: flex;
         justify-content: center;
-        font-size: 1.4rem;
+        padding: 0;
+        background-color: $yellow;
+        transition: all ease .36s;
+        border-radius: 4px;
+        a{
+          padding: 12px 20px;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          font-size: 1.4rem;
+          width: 100%;
+          align-items: center;
+        }
+      }
+      .project-link {
         &:hover{
-          font-weight: bold;
-          svg{
-            --stroke: var(--line-active);
-            --stroke-delay: .1s;
-            --offset: 180px;
-            stroke-dashoffset: 124px;
-            //transition: stroke-dashoffset .35s;
-            z-index: -1;
+          background-color: $main_color;
+          a{
+            color: $yellow;
           }
         }
-        //svg{
-        //  opacity: 1;
-        //}
-        svg {
-          width: 136px;
-          position: absolute;
-          top: -30px;
-          //left: 32px;
-          //transform: translate(0, 7px) translateZ(0);
-          fill: none;
-          stroke: var(--stroke, var(--line));
-          stroke-linecap: round;
-          stroke-width: 2px;
-          stroke-dasharray: var(--offset, 69px) 278px;
-          stroke-dashoffset: 361px;
-          transition: stroke .25s ease var(--stroke-delay, 0s), stroke-dasharray .35s, stroke-dashoffset .35s;
-          opacity: 1;
-          --stroke: var(--line-active);
-          --stroke-delay: .1s;
-          --offset: 180px;
+        a{
+          position: relative;
+          color: $main_color;
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+      .cv-link{
+        background-color: $main_color;
+        color: $yellow;
+        align-items: center;
+        gap: 12px;
+        &:hover{
+          background-color: $yellow;
+          a{
+            color: $main_color;
+          }
+          svg path{
+            stroke : $main_color;
+          }
+        }
+        a{
+          color: $yellow;
+          width: 100%;
+          @media screen and (max-width: 768px) {
+            //flex-direction: row;
+            gap: 12px;
+            padding: 4px 12px;
+          }
         }
       }
     }
