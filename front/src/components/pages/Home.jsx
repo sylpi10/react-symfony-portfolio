@@ -72,7 +72,13 @@ const Home = () => {
                         </a>
                     </button>
                     <button className="project-link link-button">
-                        <a  href={'#projets'} title={"Voir les projets"}>Projets
+                        <a  href={'#projets'} title={"Voir les projets"}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" className="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/>
+                            </svg>
+                            Projets
                             {/*<svg viewBox="0 0 70 36">*/}
                             {/*    <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />*/}
                             {/*</svg>*/}

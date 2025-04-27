@@ -89,6 +89,10 @@
           }
 
         }
+        @media screen and (max-width: 768px) {
+          max-width: 100%;
+        }
+
         .person-description{
           position: relative;
           display: inline-block;
@@ -123,6 +127,9 @@
             animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
             animation-delay: .6s;
             transform: skewX(1deg) skewY(-1deg);
+          }
+          @media screen and (max-width: 768px) {
+            max-width: 90%;
           }
         }
       }
@@ -190,14 +197,19 @@
         background-color: $yellow;
         transition: all ease .36s;
         border-radius: 4px;
+        &:hover a{
+          gap: 14px;
+        }
         a{
-          padding: 12px 20px;
+          padding: 8px 16px;
           cursor: pointer;
           display: flex;
           justify-content: center;
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           width: 100%;
           align-items: center;
+          gap: 6px;
+          transition:gap ease .4s;
         }
       }
       .project-link {
@@ -212,13 +224,15 @@
           color: $main_color;
           text-align: center;
           cursor: pointer;
+          svg{
+            width: 30px;
+          }
         }
       }
       .cv-link{
         background-color: $main_color;
         color: $yellow;
         align-items: center;
-        gap: 12px;
         &:hover{
           background-color: $yellow;
           a{

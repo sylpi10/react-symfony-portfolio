@@ -5,11 +5,11 @@ const Parcours = () => {
 
     useEffect(() => {
         const TAGS = [
-            'Symfony', 'React', 'vite js', 'Php', 'Javascript', 'Html', 'CSS', 'Scss', 'Sass', 'doctrine', 'composer',
-            'Less', 'Sql', 'MySql', 'Doctrine', 'npm', 'Redux', 'Twig', 'Rest', 'UI/UX', 'Magento', 'PhpStorm', 'Photoshop', 'Git', 'click-up'
+            'Symfony', 'React', 'Vite js', 'Php', 'Javascript', 'Html', 'CSS', 'Scss', 'Sass', 'Doctrine', 'Composer',
+            'Less', 'Sql', 'MySql', 'Doctrine', 'npm', 'Redux', 'Twig', 'Rest', 'UI/UX', 'Magento', 'PhpStorm', 'Photoshop', 'Git', 'Click-up'
         ];
         const DURATION = 12000;
-        const ROWS = 3;
+        const ROWS = 5;
         const TAGS_PER_ROW = 5;
 
         // Fonction pour générer un nombre aléatoire dans une plage
