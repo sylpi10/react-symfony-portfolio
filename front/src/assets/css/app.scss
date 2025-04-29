@@ -73,7 +73,9 @@ section:not(#home){
 }
 
 @import "home";
+@import "button";
 @import "projects";
+@import "projectsDetails";
 @import "about";
 @import "nav";
 @import "parcours";

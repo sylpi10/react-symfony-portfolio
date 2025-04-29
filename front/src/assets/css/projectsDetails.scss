@@ -1,0 +1,92 @@
+//details page
+.preview-images-wrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  .computer-images-wrapper{
+    width: 70%;
+    margin-top: 56px;
+    position: relative;
+    .computer-container{
+      position: relative;
+      margin-top: -10px;
+      top: -10px;
+      margin-bottom: 80px;
+      .computer-img-container{
+        height: 507px;
+        overflow-X: hidden;
+        overflow-Y: scroll;
+        img.computer{
+          width: 100%;
+          left: 24px;
+          top: -29px;
+          position: absolute;
+        }
+      }
+      img.project-image{
+        width: 95%;
+        left: 23px;
+        position: relative;
+        top: -30px;
+        margin:30px auto;
+        display: flex;
+      }
+    }
+  }
+
+  .mobile-images-wrapper{
+    width: 20%;
+    right: 40px;
+    margin-top: 80px;
+    position: relative;
+    .computer-container{
+      position: relative;
+      margin-top: -10px;
+      top: -10px;
+      margin-bottom: 80px;
+      .computer-img-container{
+        height: 398px;
+        overflow-X: hidden;
+        overflow-Y: scroll;
+        img.computer{
+          width: 100%;
+          left: 0;
+          top: -60px;
+          position: absolute;
+        }
+      }
+      img.project-image{
+        width: 98%;
+        left: 9px;
+        position: relative;
+        top: -30px;
+        margin:30px auto;
+        display: flex;
+      }
+    }
+  }
+}
+
+
+
+.project-container{
+  margin: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  .description{
+    width: 60%;
+    min-width: 400px;
+  }
+  .infos{
+    display: flex;
+    flex-direction: column;
+  }
+  .buttons-link-wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+}

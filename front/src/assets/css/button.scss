@@ -1,0 +1,55 @@
+button.button-link{
+  position: relative;
+  min-width: 100px;
+  display: flex;
+  background-color: $main_color;
+  border: solid 1px $main_color;
+  border-radius: 4px;
+  &:hover{
+    background-color: $yellow;
+    a.see-more{
+      gap: 14px;
+      color: $main_color;
+      svg{
+        &.weblink-icon{
+          stroke: $main_color;
+        }
+        &.plus-icon, &.github-icon2{
+          fill: $main_color;
+        }
+        &.github-icon{
+          g#icons_Q2{
+            fill: $main_color;
+          }
+        }
+      }
+    }
+  }
+  a.see-more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $yellow;
+    gap: 4px;
+    padding: 6px 8px;
+    transition: gap ease .4s;
+    @media screen and (max-width: 768px) {
+      min-height: 50px;
+      padding: 0;
+      min-width: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span{
+        background-color: rgba(12,20,35,.64);
+        margin: 0;
+        display: flex;
+        width: 83%;
+        height: 59%;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
