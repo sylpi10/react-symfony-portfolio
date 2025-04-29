@@ -181,7 +181,7 @@
       position: absolute;
       width: 735px;
       right: 0;
-      bottom: 0;
+      bottom: -1px;
       z-index: 4;
       @media screen and (max-width: 768px) {
         display: none;
@@ -274,6 +274,9 @@
     padding: 20px;
     position: relative;
     align-items: center;
+    .text{
+      margin: 20px 0;
+    }
     &.first-para{
       //background-color: lighten($yellow, 50%);
       clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
@@ -291,6 +294,7 @@
         height: 12px;
         position: absolute;
         bottom: 20px;
+        margin-top: 40px;
         left: 0;
         clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
       }
