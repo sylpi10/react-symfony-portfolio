@@ -35,7 +35,7 @@ const Parcours = () => {
             });
 
             // Ajoute les tags deux fois pour créer une animation fluide
-            tagElements.concat(tagElements).forEach(el => inner.appendChild(el));
+            tagElements.forEach(el => inner.appendChild(el));
             slider.appendChild(inner);
             return slider;
         };
@@ -43,8 +43,10 @@ const Parcours = () => {
         // Récupérer la liste des tags
         const tagList = document.getElementById('tagList');
         for (let i = 0; i < ROWS; i++) {
-            const tags = shuffle(TAGS).slice(0, TAGS_PER_ROW);
-            const duration = random(DURATION - 5000, DURATION + 5000);
+            const start = i * TAGS_PER_ROW;
+            const end = start + TAGS_PER_ROW;
+            const tags = TAGS.slice(start, end); // on prend 5 tags consécutifs
+            const duration = DURATION; // même durée pour tout le monde
             const reverse = i % 2 === 0;
             const slider = createInfiniteLoopSlider(tags, duration, reverse);
             tagList.appendChild(slider);
