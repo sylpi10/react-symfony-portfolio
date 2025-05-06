@@ -41,6 +41,7 @@ const ProjectDetails = () => {
                 <h1>{project.name}</h1>
 
                 <div className="project-container">
+                    <div className="round"></div>
                     <div className="description">
                         <div dangerouslySetInnerHTML={{ __html: project.description }} />
                     </div>

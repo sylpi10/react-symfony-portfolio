@@ -22,37 +22,40 @@ const About = () => {
     const age = getAge('1990-03-17');
 
     return (
+        <>
         <main className="section-container about-container">
-            <div className="about-me-wrapper">
-                <div className="name">
-                    <h2 className={"section-title"}>Sylvain, {age} ans</h2>
-                    <img
-                        src={arrow}// Update the path as necessary
-                        className="arrow"
-                        alt="dessin de flêche"
-                        width="220"
-                        height="200"
-                    />
+            <div className="content">
+                <h2 className={"section-title"}>En quelques mots</h2>
+                <div className="about-me-wrapper">
+                    <div className="name">
+                        <h3 className={"person-title"}>Sylvain, {age} ans</h3>
+                        <img
+                            src={arrow}// Update the path as necessary
+                            className="arrow"
+                            alt="dessin de flêche"
+                            width="220"
+                            height="200"
+                        />
+                    </div>
+                    <div className="image-wrapper">
+                        <img
+                            src={me} // Update the path as necessary
+                            className="profile"
+                            alt="photo de profil"
+                            width="400"
+                        />
+                    </div>
+                    <div className="tags">
+                        <ul>
+                            <li>Conception </li>
+                            <li>Développement Back-end</li>
+                            <li>Développement Front-end</li>
+                            <li>Git Workflow</li>
+                        </ul>
+                    </div>
                 </div>
-                <div className="image-wrapper">
-                    <img
-                        src={me} // Update the path as necessary
-                        className="profile"
-                        alt="photo de profil"
-                        width="400"
-                    />
-                </div>
-                <div className="tags">
-                    <ul>
-                        <li>Conception </li>
-                        <li>Développement Back-end</li>
-                        <li>Développement Front-end</li>
-                        <li>Git Workflow</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="text-container">
-        <span className="info age" data-move="left">{age} ans</span>
+                <div className="text-container">
+                <span className="info age" data-move="left">{age} ans</span>
                 <span className="info dev" data-move="bottom">Développeur</span>
                 <div className="text-wrapper">
                     <p>
@@ -95,7 +98,10 @@ const About = () => {
                 <span className="info where" data-move="top">Toulouse </span>
                 <span className="info grimpe" data-move="right">Grimpeur</span>
             </div>
+            </div>
         </main>
+        <div className="round"></div>
+        </>
     );
 };
 

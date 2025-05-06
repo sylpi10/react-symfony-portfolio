@@ -1,41 +1,53 @@
 @use "./variables" as *;
 
-.section-container{
-  .about-me-wrapper{
-    display: flex;
-    margin: 120px auto 40px auto;
-    justify-content: center;
-    position: relative;
-    max-width: 96%;
-    .name{
+#a-propos{
+  .section-container{
+    .content{
+      padding-top: 40px;
+    }
+    .about-me-wrapper{
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+      margin: 60px auto 40px auto;
+      justify-content: center;
       position: relative;
-    }
-    img{
-      &.arrow{
-        transform: rotate(75deg);
-        z-index: 10;
-        position: absolute;
-        top: 40px;
-        right: -37%;
-      }
-      &.me{
-        z-index: 8;
+      max-width: 96%;
+      .name{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
         position: relative;
+        h3{
+          font-family: 'effortless', "sans-serif";
+          font-size: 2rem;
+          text-transform: capitalize;
+          z-index: 12;
+          position: relative;
+          text-align: center;
+        }
       }
-    }
-    .image-wrapper{
-      position: relative;
-      margin-left: 30px;
-      margin-right: 40px;
-      @media screen and (max-width: 1048px){
-        margin-right: 10px;
+      img{
+        &.arrow{
+          transform: rotate(75deg);
+          z-index: 10;
+          position: absolute;
+          top: 40px;
+          right: -37%;
+        }
+        &.me{
+          z-index: 8;
+          position: relative;
+        }
       }
-    }
+      .image-wrapper{
+        position: relative;
+        margin-left: 30px;
+        margin-right: 40px;
+        @media screen and (max-width: 1048px){
+          margin-right: 10px;
+        }
+      }
 
-    @media screen and (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         flex-direction: column;
         .name{
           align-items: center;
@@ -56,129 +68,146 @@
           display: flex;
           justify-content: center;
         }
-    }
-    .tags{
-      margin-left: 40px;
-      @media screen and (max-width: 1048px){
-        margin-left: 10px;
       }
-      ul{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding-left: 0;
-        li{
-          font-size: 1.4rem;
-          color: $main_color;
-          min-height: 40px;
-          border:solid 1px rgba(100,41,112,.06);
-          background-color: #fff;
-          position: relative;
-          right: 0;
+      .tags{
+        margin-left: 40px;
+        @media screen and (max-width: 1048px){
+          margin-left: 10px;
+        }
+        ul{
           display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 0 12px;
-          border-radius: 8px;
-          text-align: center;
-          &:before,
-          &:after {
-            content: "";
-            position: absolute;
-            z-index: -2;
-            transition: all 250ms ease-out;
-          }
-          &:nth-child(odd){
-            &:before {
-              transform: skew(-8deg) rotate(-3deg);
-              box-shadow: 1px 8px 18px rgba(31, 31, 31, 0.8);
-              left: 10px;
-              bottom: 12px;
-              width: 50%;
-              height: 55%;
-              max-width: 200px;
-              max-height: 100px;
-            }
-          }
-          &:nth-child(even){
+          flex-direction: column;
+          gap: 20px;
+          padding-left: 0;
+          z-index: 12;
+          li{
+            font-size: 1.4rem;
+            color: $main_color;
+            min-height: 40px;
+            border:solid 1px rgba(100,41,112,.06);
+            background-color: #fff;
+            position: relative;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 12px;
+            border-radius: 8px;
+            text-align: center;
+            &:before,
             &:after {
-              transform: skew(8deg) rotate(3deg);
-              box-shadow: 1px 8px 18px rgba(54,1,63,.8);
-              right: 10px;
-              bottom: 12px;
-              width: 50%;
-              height: 55%;
-              max-width: 200px;
-              max-height: 100px;
+              content: "";
+              position: absolute;
+              z-index: -2;
+              transition: all 250ms ease-out;
+            }
+            &:nth-child(odd){
+              &:before {
+                transform: skew(-8deg) rotate(-3deg);
+                box-shadow: 1px 8px 18px rgba(31, 31, 31, 0.8);
+                left: 10px;
+                bottom: 12px;
+                width: 50%;
+                height: 55%;
+                max-width: 200px;
+                max-height: 100px;
+              }
+            }
+            &:nth-child(even){
+              &:after {
+                transform: skew(8deg) rotate(3deg);
+                box-shadow: 1px 8px 18px rgba(54,1,63,.8);
+                right: 10px;
+                bottom: 12px;
+                width: 50%;
+                height: 55%;
+                max-width: 200px;
+                max-height: 100px;
+              }
             }
           }
         }
+      }
+    }
+    .text-container{
+      position: relative;
+      background-color: $yellow;
+      span.info{
+        position: absolute;
+        background: url("/public/assets/images/paint.png") no-repeat center;
+        background-size:contain;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $yellow;
+        font-weight: bold;
+        transition: top 0.2s ease-out, left 0.2s ease-out, bottom 0.2s ease-in-out, right .2s ease-in-out;
+        font-family: 'amatic_bold', 'sans-serif';
+        letter-spacing: 2px;
+        font-size: 1.2rem;
+        @media screen and (max-width: 1048px) {
+          width: 160px;
+          height: 160px;
+          font-size: .9rem;
+        }
+        @media screen and (max-width: 800px) {
+          display: none !important;
+        }
+        &.dev{
+          top: 0;
+          left: 20px;
+        }
+        &.grimpe{
+          top: 80px;
+          right: 12%;
+          @media screen and (max-width: 1260px) {
+            top: 140px;
+            right: 20px;
+          }
+        }
+        &.where{
+          bottom: 8px;
+          left: 7%;
+        }
+        &.age{
+          bottom: 160px;
+          right: 60px;
+        }
+        &.bounce{
+          animation: bounce 1.2s  ease-in-out;
+        }
+      }
+      .text-wrapper{
+        padding: 60px;
+        width: 50%;
+        @media screen and (max-width: 1260px) {
+          width: 62%;
+        }
+        @media screen and (max-width: 800px) {
+          width: 100%;
+        }
+        margin: auto;
       }
     }
   }
-  .text-container{
-    position: relative;
-    background-color: $yellow;
-    span.info{
-      position: absolute;
-      background: url("/public/assets/images/paint.png") no-repeat center;
-      background-size:contain;
-      width: 200px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: $yellow;
-      font-weight: bold;
-      transition: top 0.2s ease-out, left 0.2s ease-out, bottom 0.2s ease-in-out, right .2s ease-in-out;
-      font-family: 'amatic_bold', 'sans-serif';
-      letter-spacing: 2px;
-      font-size: 1.2rem;
-      @media screen and (max-width: 1048px) {
-        width: 160px;
-        height: 160px;
-        font-size: .9rem;
-      }
-      @media screen and (max-width: 800px) {
-        display: none !important;
-      }
-      &.dev{
-        top: 0;
-        left: 20px;
-      }
-      &.grimpe{
-        top: 80px;
-        right: 12%;
-        @media screen and (max-width: 1260px) {
-          top: 140px;
-          right: 20px;
-        }
-      }
-      &.where{
-        bottom: 8px;
-        left: 7%;
-      }
-      &.age{
-        bottom: 160px;
-        right: 60px;
-      }
-      &.bounce{
-        animation: bounce 1.2s  ease-in-out;
-      }
-    }
-    .text-wrapper{
-      padding: 60px;
-      width: 50%;
-      @media screen and (max-width: 1260px) {
-        width: 62%;
-      }
-      @media screen and (max-width: 800px) {
-        width: 100%;
-      }
-      margin: auto;
+  .round{
+    position: absolute;
+    width: 500px;
+    height: 540px;
+    background: rgba(228, 208, 10, 0.3);
+    border-radius: 60% 40% 50% 70%/60% 30% 70% 40%;
+    right: -27px;
+    top: -3%;
+    z-index: -1;
+    transform: rotate(40deg);
+    @media screen and (max-width: 768px){
+      right: -14%;
     }
   }
 }
+
 
 @-webkit-keyframes bounce {
   from, to { transform: scale(1, 1); }

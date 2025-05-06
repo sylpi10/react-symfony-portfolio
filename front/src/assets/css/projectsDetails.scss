@@ -1,16 +1,127 @@
 //details page
+.project-container{
+  margin: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+  .round{
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    background: rgba(228,208,10,.3);
+    border-radius: 60% 40% 50% 70% / 60% 30% 70% 40%;
+    left: -80px;
+    top: 9%;
+    z-index: 2;
+    @media screen and (max-width: 768px) {
+      left: -44px;
+      top: 0;
+    }
+    @media screen and (max-width: 600px) {
+      left: -153px;
+      top: 113px;
+    }
+  }
+  .description{
+    width: 60%;
+    min-width: 400px;
+    color: #333;
+    z-index: 12;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+    ul{
+      list-style-type: circle;
+      li{
+        margin-bottom: 4px;
+        a{
+          color: $main_color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .infos{
+    display: flex;
+    flex-direction: column;
+    width: 36%;
+    background-color: $main_color;
+    padding: 0;
+    position: relative;
+    border-radius: 8px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+    p.title{
+      color: $main_color;
+      text-align: center;
+      background-color: $yellow;
+      padding: 16px;
+      font-weight: bold;
+      margin-top: 0;
+      top: 0;
+      position: relative;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      clip-path: polygon(
+              0 0,    /* top-left */
+              100% 0, /* top-right */
+              100% 70%, /* bottom-right before point */
+              50% 100%, /* point */
+              0 70%    /* bottom-left before point */
+      );
+    }
+    ul{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px;
+      height: fit-content;
+      border-bottom: solid 1px rgba(255,255,255,.4);
+      li{
+        white-space: nowrap;
+        padding: 8px;
+        color:$main_color;
+        background-color: $yellow;
+        clip-path: polygon(
+          0 0, 10% 10%, 90% 10%, 100% 0,
+          100% 100%, 90% 90%, 10% 90%, 0 100%
+        );
+      }
+    }
+
+  }
+  .buttons-link-wrapper{
+    display: flex;
+    padding: 14px;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    button.button-link{
+      border: solid 2px $yellow;
+    }
+  }
+}
+
 .preview-images-wrapper{
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 40px;
   flex-wrap: wrap;
+  z-index: 12;
   @media screen and (max-width: 1300px) {
     flex-direction: column;
     align-items: center;
     gap: 40px;
   }
   .computer-images-wrapper{
+    z-index: 12;
     width: 70%;
     margin-top: 56px;
     position: relative;
@@ -108,67 +219,5 @@
         }
       }
     }
-  }
-}
-
-.project-container{
-  margin: 0 60px;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: flex-start;
-  .description{
-    width: 60%;
-    min-width: 400px;
-    color: #333;
-    ul{
-      list-style-type: circle;
-      li{
-        margin-bottom: 4px;
-        a{
-          color: $main_color;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-  .infos{
-    display: flex;
-    flex-direction: column;
-    width: 36%;
-    background-color: $main_color;
-    padding: 14px;
-    border-radius: 8px;
-    p.title{
-      color: #fff;
-    }
-    ul{
-      padding-left: 0;
-      gap: 6px;
-      display: flex;
-      flex-wrap: wrap;
-      height: fit-content;
-      border-bottom: solid 1px rgba(255,255,255,.4);
-      padding-bottom: 20px;
-      li{
-        white-space: nowrap;
-        padding: 8px;
-        color:$main_color;
-        background-color: $yellow;
-        clip-path: polygon(
-          0 0, 10% 10%, 90% 10%, 100% 0,
-          100% 100%, 90% 90%, 10% 90%, 0 100%
-        );
-      }
-    }
-    button.button-link{
-      border: solid 2px $yellow;
-    }
-  }
-  .buttons-link-wrapper{
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-    flex-wrap: wrap;
   }
 }
