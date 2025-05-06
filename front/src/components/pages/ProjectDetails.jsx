@@ -3,6 +3,7 @@ import {getProjectDetails} from "../../service/api.js";
 import {useParams} from "react-router-dom";
 import computerPic from '../../../public/assets/images/computer-screen.png';
 import smatphonePic from '../../../public/assets/images/smartphone-screen.png';
+
 const ProjectDetails = () => {
     const { id } = useParams();
     const [project, setProject] = useState(null);
@@ -32,6 +33,8 @@ const ProjectDetails = () => {
         return <div>{error}</div>;
     }
 
+        const technosItems = project.technos.split(',').map(mot => mot.trim());
+
     return (
         <main className="section-container projects-container">
             <div className="content">
@@ -42,7 +45,14 @@ const ProjectDetails = () => {
                         <div dangerouslySetInnerHTML={{ __html: project.description }} />
                     </div>
                     <div className="infos">
-                        <p>Développé avec : <b>{project.technos}</b></p>
+                        <div className="tecnhos">
+                            <p className={"title"}>Boite à outils du projet:</p>
+                            <ul>
+                                {technosItems.map((techno, index) => (
+                                    <li key={index}>{techno}</li>
+                                ))}
+                            </ul>
+                        </div>
                         <div className={"buttons-link-wrapper"}>
                             {project.weblink && (
                                 <button className={"button-link"}>

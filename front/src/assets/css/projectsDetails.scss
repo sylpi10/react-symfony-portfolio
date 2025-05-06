@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
   @media screen and (max-width: 1300px) {
     flex-direction: column;
@@ -114,15 +115,55 @@
   margin: 0 60px;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 12px;
+  align-items: flex-start;
   .description{
     width: 60%;
     min-width: 400px;
+    color: #333;
+    ul{
+      list-style-type: circle;
+      li{
+        margin-bottom: 4px;
+        a{
+          color: $main_color;
+          text-decoration: underline;
+        }
+      }
+    }
   }
   .infos{
     display: flex;
     flex-direction: column;
+    width: 36%;
+    background-color: $main_color;
+    padding: 14px;
+    border-radius: 8px;
+    p.title{
+      color: #fff;
+    }
+    ul{
+      padding-left: 0;
+      gap: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      height: fit-content;
+      border-bottom: solid 1px rgba(255,255,255,.4);
+      padding-bottom: 20px;
+      li{
+        white-space: nowrap;
+        padding: 8px;
+        color:$main_color;
+        background-color: $yellow;
+        clip-path: polygon(
+          0 0, 10% 10%, 90% 10%, 100% 0,
+          100% 100%, 90% 90%, 10% 90%, 0 100%
+        );
+      }
+    }
+    button.button-link{
+      border: solid 2px $yellow;
+    }
   }
   .buttons-link-wrapper{
     display: flex;
