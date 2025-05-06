@@ -4,7 +4,9 @@ import React from "react";
 
 const project = (props) => {
 
-    return (
+    const technosItems = props.technos.split(',').slice(0,2).join(',');
+
+    return(
         <div
             className="item-content"
             style={{
@@ -14,7 +16,7 @@ const project = (props) => {
             <h3>{props.name}</h3>
             <div className="infos">
                 <span className="date">{props.date}</span>
-                <span className="techno">{props.technos}</span>
+                <span className="techno">{technosItems}</span>
             </div>
             <div className="links-wrapper">
                 {props.weblink && (

@@ -33,7 +33,7 @@ const ProjectDetails = () => {
         return <div>{error}</div>;
     }
 
-        const technosItems = project.technos.split(',').map(mot => mot.trim());
+    const technosItems = project.technos.split(',').map(mot => mot.trim());
 
     return (
         <main className="section-container projects-container">
