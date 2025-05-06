@@ -341,7 +341,22 @@
     padding: 0;
   }
 }
-
+.back-to-top{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 120;
+  background-color: #f7f1b5;
+  padding: 10px;
+  border: solid 1px rgba(218,208,10,.6);
+  border-radius: 4px;
+  &:hover{
+    border: solid 1px rgba(218,208,10,.4);
+  }
+  svg{
+    stroke: $main_color;
+  }
+}
 @keyframes border-appear {
   0% {
     width: 0;
