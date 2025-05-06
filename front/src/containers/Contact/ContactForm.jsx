@@ -90,8 +90,15 @@ const ContactForm = (props) => {
                             tabIndex="-1"
                             autoComplete="off"
                         />
-                        <button className="cta mail-cta" type="submit">
-                            <span>Envoyer</span>
+                        <button className={"button-link email-button"} type="submit">
+                            <span className={"see-more sent-mail"}>
+                               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" className="lucide lucide-send-icon lucide-send"><path
+                                   d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path
+                                   d="m21.854 2.147-10.94 10.939"/></svg>
+                                Envoyer
+                            </span>
                         </button>
                     </form>
                 </div>

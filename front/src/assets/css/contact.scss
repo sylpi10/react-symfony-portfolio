@@ -89,49 +89,19 @@
           display: none;
         }
 
-        button.cta{
+        button.email-button{
           width: 200px;
+          margin: auto;
           display: flex;
           text-align: center;
           align-items: center;
           height: 40px;
           position: relative;
-          overflow: hidden;
           padding: 4px;
           border: none;
-          &::before{
-            position: absolute;
-            content:"";
-            left: -8px;
-            transform: rotate(10deg);
-            width: 108%;
-            height: 100%;
-            transition: trasform 2s;
-          }
-
-          &.mail-cta{
-            margin: 40px auto;
-            &::before{
-              background-color:$main_color;
-            }
-          }
-          &:hover::before{
-            animation: animate 1.2s  ease-in-out;
-          }
-          span{
-            z-index: 12;
-            text-align: center;
-            height: 34px;
-            padding: 4px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: #fff;
-            color: $main_color;
+          font-weight: bold;
+          text-transform: uppercase;
+          .sent-mail{
             cursor: pointer;
           }
         }

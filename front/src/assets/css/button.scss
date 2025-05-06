@@ -7,7 +7,7 @@ button.button-link{
   border-radius: 4px;
   &:hover{
     background-color: $yellow;
-    a.see-more{
+    .see-more{
       gap: 14px;
       color: $main_color;
       svg{
@@ -25,7 +25,7 @@ button.button-link{
       }
     }
   }
-  a.see-more {
+  .see-more {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -35,7 +35,10 @@ button.button-link{
     padding: 6px 8px;
     transition: gap ease .4s;
     @media screen and (max-width: 768px) {
-      min-height: 50px;
+     gap: 8px;
+    }
+    @media screen and (max-width: 768px) {
+      min-height: 36px;
       padding: 0;
       min-width: 120px;
       display: flex;
@@ -49,6 +52,9 @@ button.button-link{
         height: 59%;
         justify-content: center;
         align-items: center;
+        @media screen and (max-width: 768px) {
+          width: fit-content;
+        }
       }
     }
   }
