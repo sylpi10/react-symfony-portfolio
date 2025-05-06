@@ -87,7 +87,7 @@ const ProjectDetails = () => {
                         <div className="computer-img-container">
                             <img className={"computer"} src={computerPic} alt=""/>
                             <img
-                                src= {`/assets/images/${project.detailPic}`}
+                                src= {`/assets/images/projects/${project.detailPic}`}
                                 className="project-image"
                                 alt="image du site"
                                 width="800"
@@ -101,10 +101,10 @@ const ProjectDetails = () => {
                             <img className={"computer"} src={smatphonePic} alt=""/>
 
                             <img
-                                src= {`/assets/images/full_directicimes_mobile.png`}
+                                src= {`/assets/images/projects/${project.detailPicMobile}`}
                                 className="project-image"
                                 alt="image du site"
-                                width="800"
+                                width="300"
                             />
                         </div>
                     </div>

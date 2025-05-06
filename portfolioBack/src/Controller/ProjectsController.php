@@ -35,7 +35,7 @@ class ProjectsController extends AbstractController
                     'weblink' => $project->getWeblink(),
                     'githublink' => $project->getGithublink(),
                     'background' => $project->getBackground(),
-                    'detailPic' => $project->getDetailPic(),
+
                 ];
             }
             return new JsonResponse($data);
@@ -63,6 +63,7 @@ class ProjectsController extends AbstractController
                 'githublink' => $project->getGithublink(),
                 'background' => $project->getBackground(),
                 'detailPic' => $project->getDetailPic(),
+                'detailPicMobile' => $project->getDetailPicMobile(),
             ];
 
         // Return JSON response

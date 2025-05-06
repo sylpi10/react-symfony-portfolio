@@ -8,7 +8,7 @@ const project = (props) => {
         <div
             className="item-content"
             style={{
-                backgroundImage: `url(/assets/images/${props.background}`,
+                backgroundImage: `url(/assets/images/projects/${props.background}`,
             }}
         >
             <h3>{props.name}</h3>

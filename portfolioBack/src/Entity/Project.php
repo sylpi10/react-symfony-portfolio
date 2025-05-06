@@ -38,6 +38,9 @@ class Project
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $detail_pic_mobile = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -137,6 +140,18 @@ class Project
     public function setDescription(?string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getDetailPicMobile(): ?string
+    {
+        return $this->detail_pic_mobile;
+    }
+
+    public function setDetailPicMobile(?string $detail_pic_mobile): static
+    {
+        $this->detail_pic_mobile = $detail_pic_mobile;
 
         return $this;
     }
