@@ -3,24 +3,46 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
   .computer-images-wrapper{
     width: 70%;
     margin-top: 56px;
     position: relative;
+    display: flex;
+    @media screen and (max-width: 1300px) {
+      width: 84%;
+    }
     .computer-container{
       position: relative;
       margin-top: -10px;
       top: -10px;
       margin-bottom: 80px;
+      @media screen and (max-width: 1300px) {
+        margin: 0;
+      }
       .computer-img-container{
         height: 507px;
         overflow-X: hidden;
         overflow-Y: scroll;
+        @media screen and (max-width: 1300px) {
+          height: fit-content;
+          max-height: 400px;
+          border: solid 1px #ccc;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
         img.computer{
           width: 100%;
           left: 24px;
           top: -29px;
           position: absolute;
+          @media screen and (max-width: 1300px) {
+            display: none;
+          }
         }
       }
       img.project-image{
@@ -30,6 +52,12 @@
         top: -30px;
         margin:30px auto;
         display: flex;
+        @media screen and (max-width: 1300px) {
+          margin: 0;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
       }
     }
   }
@@ -39,6 +67,11 @@
     right: 40px;
     margin-top: 80px;
     position: relative;
+    @media screen and (max-width: 1300px) {
+      width: 50%;
+      margin: auto;
+      right: 0;
+    }
     .computer-container{
       position: relative;
       margin-top: -10px;
@@ -48,11 +81,16 @@
         height: 398px;
         overflow-X: hidden;
         overflow-Y: scroll;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        border: solid 1px #ccc;
         img.computer{
           width: 100%;
           left: 0;
           top: -60px;
           position: absolute;
+          @media screen and (max-width: 1300px) {
+            display: none;
+          }
         }
       }
       img.project-image{
@@ -62,6 +100,11 @@
         top: -30px;
         margin:30px auto;
         display: flex;
+        @media screen and (max-width: 1300px) {
+          margin: 0;
+          top: 0;
+          left: 0;
+        }
       }
     }
   }
