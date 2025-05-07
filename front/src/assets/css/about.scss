@@ -1,6 +1,7 @@
 @use "./variables" as *;
 
 #a-propos{
+  overflow: hidden;
   .section-container{
     .content{
       padding-top: 40px;

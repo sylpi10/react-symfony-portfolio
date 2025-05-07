@@ -23,9 +23,10 @@ const Projects = () => {
     }, []);
 
     // Handle loading state
-    if (loading) {
-        return <div>Loading projects...</div>;
-    }
+    // if (loading) {
+    //     return (
+    //
+    // }
 
     // Handle error state
     if (error) {
@@ -36,17 +37,35 @@ const Projects = () => {
         <main className="section-container projects-container">
             <div className="content">
                 <h2 className={"section-title"}>Projets réalisés</h2>
-                <div className="projects-list-container">
-                    <ul className="projects-list">
-                        {projects.map((project) => {
-                            return (
-                                <li key={project.id} className="project-item">
-                                    <Project {...project} />
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
+                {
+                    loading ?
+                        <div className={"spinner-container"}>
+                            <span className={"spinner-title"}>Chargement des projets...</span>
+                            <span className={"spinner"}> </span>
+                        </div>:
+                    <>
+                        {
+                            projects.length > 1 ?
+                            <div className="projects-list-container">
+                                <ul className="projects-list">
+                                    {projects.map((project) => {
+                                        return (
+                                            <li key={project.id} className="project-item">
+                                                <Project {...project} />
+                                            </li>
+                                        );
+                                    })
+                                    }
+                                </ul>
+
+                            </div> :
+                            <div className={"loading-error"}>
+                                <p>Une erreur est survenue lors du chargement...</p>
+                            </div>
+                        }
+                    </>
+                }
+
             </div>
         </main>
     );
