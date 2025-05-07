@@ -173,6 +173,9 @@
       height: 200px;
       background: url("/assets/images/curved_shape.png") no-repeat center;
       background-size: contain;
+      @media screen and (max-width: 768px) {
+        margin-left: 0;
+      }
       span{
         font-size: 1.6rem;
         color: $main_color;
@@ -216,7 +219,7 @@
   .tag {
     display: flex;
     align-items: center;
-    min-width: 120px;
+    min-width: 130px;
     justify-content: center;
     gap: 0 0.2rem;
     color: #e2e8f0;

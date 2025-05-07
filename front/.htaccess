@@ -1,6 +1,10 @@
 Options -MultiViews
 RewriteEngine On
 
+# force https
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} !on
+RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Laisser passer les fichiers et dossiers existants (HTML, JS, CSS, images, PHP)
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d

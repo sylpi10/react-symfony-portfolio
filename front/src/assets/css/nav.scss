@@ -125,6 +125,7 @@ header{
         flex-direction: column;
         justify-content: space-around;
         gap: 4px;
+        cursor: pointer;
         span{
           display: block;
           height: 2px;
@@ -132,6 +133,7 @@ header{
           border-radius: 2px;
           transition: all 0.3s ease;
         }
+
         &.open {
           span:nth-child(1) {
             transform:  translateY(14.5px) rotate(45deg);
