@@ -315,7 +315,7 @@
     }
     &.second-para{
       clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
-      background-color: lighten($main_color, 80%);
+      background-color:rgba(228, 208, 10, 0.3);
       padding-left: 80px;
       margin-left: -80px;
       width: calc(50% + 80px);
