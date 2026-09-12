@@ -308,6 +308,7 @@
         img {
             min-width: 300px;
             height: auto;
+            max-width: 500px;
         }
     }
     .fullstack-text-wrapper {
@@ -316,6 +317,7 @@
         width: 50%;
         justify-content: center;
         align-items: center;
+        padding: 40px 0;
         @media screen and (max-width: 900px) {
             width: 90%;
             margin: auto;

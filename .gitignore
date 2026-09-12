@@ -10,7 +10,7 @@ portfolioBack/public/bundles/
 portfolioBack/var/
 portfolioBack/vendor/
 portfolioBack/.idea
-
+.env.deploy
 ### front
 # === Frontend ===
 front/node_modules/

@@ -58,15 +58,15 @@ class ContactController extends AbstractController
             try {
                 $mail = (new TemplatedEmail())
                     ->to('syl.pillet@hotmail.fr')
-                    ->from($contact->getEmail())
-                    ->subject('Contact depuis le portfolio')
+                    ->from('sylpi@sylvainpillet.com')
+                    ->subject('Nouveau message du portfolio – ' . $contact->getEmail())
                     ->text($contact->getMessage());
-
-                $this->mailer->send($mail);
 
                 $contact->setDate(new \DateTimeImmutable());
                 $this->em->persist($contact);
                 $this->em->flush();
+
+                $this->mailer->send($mail);
 
                 return $this->json([
                     'success' => true,

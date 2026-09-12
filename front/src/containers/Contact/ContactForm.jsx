@@ -1,5 +1,5 @@
 // src/components/MyForm.jsx
-import React, {useState} from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -29,7 +29,7 @@ const ContactForm = (props) => {
             <div className="contact-form">
 
                 <div className="status-wrapper">
-                    {props.loading && <div className="alert loading">Envoie du Message...</div>}
+                    {props.loading && <div className="alert loading">Envoi du Message...</div>}
                     {props.error &&   <div className="alert alert-error">{props.error}</div> }
                     {props.success && <div className="alert alert-success">{props.success}</div>}
                 </div>

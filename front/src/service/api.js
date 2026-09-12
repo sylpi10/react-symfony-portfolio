@@ -12,19 +12,39 @@ export const getProjectDetails = async (id) => {
 
 export const sendEmail = async (message) => {
     const response = await fetch(`${BASE_URL}/api/contact`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(message),
     });
 
-    const result = await response.json();
+    const contentType = response.headers.get("content-type") || "";
+    const text = await response.text();
 
-    if (!response.ok) {
-        throw result;
+    // Si ce n'est pas du JSON (HTML d'erreur, redirect, proxy...), on évite le crash JSON.parse
+    if (!contentType.includes("application/json")) {
+        throw new Error(
+            `Réponse non-JSON (HTTP ${response.status}) : ${text.slice(0, 200)}`
+        );
+    }
+
+    let result;
+    try {
+        result = JSON.parse(text);
+    } catch {
+        throw new Error(
+            `JSON invalide (HTTP ${response.status}) : ${text.slice(0, 200)}`
+        );
+    }
+
+    // Cas où Symfony renvoie 200 mais success:false (ou 400/500)
+    if (!response.ok || result.success === false) {
+        // debug / test
+        if (result?.error) console.error("Mailer error:", result.error);
+
+        throw new Error(result?.message || `Erreur HTTP ${response.status}`);
     }
 
     return result;
 };
+
 
