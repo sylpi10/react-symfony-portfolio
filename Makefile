@@ -16,6 +16,7 @@ deploy-backend:
 deploy-front:
 	npm --prefix front run build
 	rsync -av --itemize-changes --delete \
+		--exclude=/api \
 		front/dist/ \
 		$(SERVER_USER)@$(SERVER_HOST):~/$(FRONT_PATH)
 
@@ -27,5 +28,6 @@ deploy-test:
 
 	npm --prefix front run build
 	rsync -av --itemize-changes --dry-run --delete \
+		--exclude=/api \
 		front/dist/ \
 		$(SERVER_USER)@$(SERVER_HOST):~/$(FRONT_PATH)

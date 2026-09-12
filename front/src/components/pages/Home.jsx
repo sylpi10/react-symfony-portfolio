@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import profilPic from "../../../public/assets/images/avatar.png";
 import shape from "../../../public/assets/images/shape.svg";
 import cv from "../../../public/assets/CV_Sylvain_Pillet_fullstack_2026.pdf";
-import fullstackPic from "../../../public/assets/images/fullstack_dev.png";
+// import fullstackPic from "../../../public/assets/images/fullstack_dev.png";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
-    const text = "Développeur\nFullstack";
+    const text = "Développeur\nFrontend / Fullstack";
     const [displayedText, setDisplayedText] = useState("");
     const [index, setIndex] = useState(0);
 
@@ -53,15 +53,21 @@ const Home = () => {
                                 <span className="cursor">|</span>
                             </h1>
                             <div className="person-description">
-                                <p>
-                                    Développeur web basé à <b>Toulouse</b>,
-                                    j'utilise principalement <b>Symfony</b> et{" "}
-                                    <b>React</b>. <br />
-                                    Curieux, et passionné par le{" "}
-                                    <b>développement web</b>, je suis en quête
-                                    d’un environnement technique stimulant pour
-                                    continuer à apprendre et m’épanouir en
-                                    équipe.
+                                <p className="description">
+                                    Développeur web basé à Toulouse, j’ai
+                                    travaillé 5 ans dans le domaine du
+                                    e-commerce.{" "}
+                                </p>
+                                <p className="description details">
+                                    {" "}
+                                    Passionné par le web et toujours curieux
+                                    d’apprendre, je propose aujourd’hui mes
+                                    services en freelance avec une affinité
+                                    particulière pour le développement frontend,
+                                    l’UI/UX et la création d’interfaces
+                                    modernes, tout en gardant la possibilité d’
+                                    intervenir sur les problématiques backend et
+                                    l’architecture d’applications web.
                                 </p>
                             </div>
                         </div>
@@ -128,46 +134,42 @@ const Home = () => {
                     <img className="shape" src={shape} alt="" />
                 </div>
             </main>
-            <div className="home-description">
-                {/* <div className="para-container first-para">
-          <img src={frontPic} alt="Logo react" height={"120"} />
-          <div className="text">
-            <p>
-              J'ai un attrait particulier pour le <b>développement frontend</b>.
-              J'aime développer des interfaces simples et limpides, trouver le
-              bon agencement et fluidifier l'utilisation des fonctionnalités.
-            </p>
-            <p>
-              Je travaille aussi bien avec <b>React</b> qu'avec du natif ou un{" "}
-              <b>moteur de templates</b>.{" "}
-            </p>
-          </div>
-          <div className="bar"></div>
-        </div>
-        <div className="para-container second-para">
-          <div className="text">
-            <p>
-              La conception de la <b>base de données</b> et la mise en place de
-              ces données est souvent la première étape d'un projet.
-            </p>
-            <p>
-              {" "}
-              J'utilise principalement <b>Symfony </b> et <b>Doctrine</b> pour
-              la préparation des données, leur récupération et l'envoie en{" "}
-              <b>frontend</b> que ce soit par une <b>api</b> ou pour un template{" "}
-              <b>Twig</b>{" "}
-            </p>
-          </div>
-          <img src={backyPic} alt="Logo symfony" height={"120"} />
-          <div className="bar"></div>
-        </div>*/}
-                <div className="image-container">
-                    <img
-                        src={fullstackPic}
-                        alt="Image de développeur"
-                        height={"800"}
-                    />
+            {/* <div className="home-description">
+                <div className="para-container first-para">
+                    <div className="text">
+                        <p>
+                            J'ai un attrait particulier pour le{" "}
+                            <b>développement frontend</b>. J'aime développer des
+                            interfaces simples et limpides, trouver le bon
+                            agencement et fluidifier l'utilisation des
+                            fonctionnalités.
+                        </p>
+                        <p>
+                            Je travaille aussi bien avec <b>React</b> qu'avec du
+                            natif ou un <b>moteur de templates</b>.{" "}
+                        </p>
+                    </div>
+                    <div className="bar"></div>
                 </div>
+                <div className="para-container second-para">
+                    <div className="text">
+                        <p>
+                            La conception de la <b>base de données</b> et la
+                            mise en place de ces données est souvent la première
+                            étape d'un projet.
+                        </p>
+                        <p>
+                            {" "}
+                            J'utilise principalement <b>Symfony </b> et{" "}
+                            <b>Doctrine</b> pour la préparation des données,
+                            leur récupération et l'envoie en <b>frontend</b> que
+                            ce soit par une <b>api</b> ou pour un template{" "}
+                            <b>Twig</b>{" "}
+                        </p>
+                    </div>
+                    <div className="bar"></div>
+                </div>
+                <div className="image-container"></div>
                 <div className="fullstack-text-wrapper">
                     <div className="para-container first-para">
                         <p>
@@ -192,7 +194,7 @@ const Home = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div>*/}
 
             {hasScrolledPast && (
                 <a href={"#home"} className="back-to-top">

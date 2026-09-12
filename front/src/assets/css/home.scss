@@ -3,7 +3,7 @@
 .homepage {
     .hero-area {
         @media screen and (min-width: 768px) {
-            height: 100vh;
+            height: calc(100vh - 64px);
         }
         @media screen and (max-width: 768px) {
             padding-bottom: 20px;
@@ -11,6 +11,7 @@
         background: linear-gradient(-128deg, $main_color, #091221);
         display: flex;
         flex-direction: column;
+        margin-top: 64px;
         .presentation {
             display: flex;
             align-items: center;
@@ -29,7 +30,7 @@
             }
             @media screen and (max-width: 768px) {
                 flex-direction: column;
-                margin-top: 80px;
+                margin-top: 20px;
                 width: 100%;
             }
             .person {
@@ -41,31 +42,43 @@
                     align-items: center;
                 }
                 height: fit-content;
-                max-height: 80%;
+                // max-height: 80%;
                 min-width: 24%;
                 max-width: 50%;
                 h1 {
                     @media screen and (min-width: 768px) {
-                        font-size: 4rem;
-                        height: 200px;
+                        font-size: 3.3rem;
+                        // height: 200px;
+                        padding-bottom: 40px;
+                        text-align: left;
                     }
                     @media screen and (max-width: 768px) {
+                        display: flex;
+                        align-items: center;
                         font-size: 2rem;
-                        height: 100px;
+                        height: fit-content;
+                        align-items: center;
+                        width: 100%;
+                        padding: 10px;
+                        gap: 12px !important;
+                        justify-content: center;
+                        text-align: center;
+                        br {
+                            display: none;
+                        }
                     }
                     margin: 0;
-                    padding-bottom: 40px;
-                    text-align: left;
+
                     font-family: "effortless", serif;
                     background: -webkit-linear-gradient($yellow 54%, orange);
-                    -webkit-background-clip: text;
+                    background-clip: text;
                     -webkit-text-fill-color: transparent;
                     .title {
                         display: flex;
                     }
-                    .concepteur {
-                        align-items: baseline;
-                    }
+                    // .concepteur {
+                    //     align-items: baseline;
+                    // }
                     .dev {
                         align-items: flex-start;
                     }
@@ -94,7 +107,8 @@
 
                 .person-description {
                     position: relative;
-                    display: flex;
+                    display: grid;
+                    align-items: center;
                     min-width: 25%;
                     max-width: 80%;
                     @media screen and (max-width: 1024px) {
@@ -103,10 +117,11 @@
                     }
                     height: fit-content;
                     color: $yellow;
-                    padding: 6px 20px;
-                    min-height: 180px;
+                    // padding: 20px 20px 60px 20px;
+                    // min-height: 240px;
                     overflow: hidden;
                     align-items: center;
+                    padding: 6px 16px;
                     p {
                         height: fit-content;
                     }
