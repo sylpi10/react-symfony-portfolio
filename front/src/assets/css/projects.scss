@@ -48,12 +48,15 @@
             border: solid 3px #fff;
             corner-shape: bevel;
             // corner-shape: scoop;
+            h3 {
+                z-index: 16;
+                font-size: 1rem;
+            }
             &:hover {
                 .item-content {
-                    background-size: 120%;
-                    //background-position: center;
-                    h3 {
-                        z-index: 16;
+                    .item-bg {
+                        transform: scale(1.15) rotate(2deg);
+                        // transform: rotate(2deg);
                     }
                     .infos {
                         z-index: 16;
@@ -83,10 +86,6 @@
                 //     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
                 //     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
                 position: relative;
-                background-size: 105%;
-                background-color: rgba(12, 20, 35, 0.4);
-                background-position: center;
-                background-size: cover;
                 width: 100%;
                 height: 100%;
                 margin: 0;
@@ -95,10 +94,16 @@
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                transition: background-size 0.4s ease;
-                @media screen and (max-width: 768px) {
+                transition: all 0.4s ease;
+
+                .item-bg {
+                    position: absolute;
+                    inset: 0;
                     background-size: cover;
+                    background-position: center;
                     background-repeat: no-repeat;
+                    background-color: rgba(12, 20, 35, 0.4);
+                    transition: transform 0.4s ease;
                 }
 
                 h3 {

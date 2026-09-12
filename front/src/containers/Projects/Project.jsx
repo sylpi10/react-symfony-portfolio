@@ -6,12 +6,13 @@ const project = (props) => {
     const technosItems = props.technos.split(",").slice(0, 2).join(",");
 
     return (
-        <div
-            className="item-content"
-            style={{
-                backgroundImage: `url(/assets/images/projects/${props.background}`,
-            }}
-        >
+        <div className="item-content">
+            <div
+                className="item-bg"
+                style={{
+                    backgroundImage: `url(/assets/images/projects/${props.background})`,
+                }}
+            />
             <h3>{props.name}</h3>
             <div className="infos">
                 <span className="date">{props.date}</span>
