@@ -1,0 +1,11 @@
+# Sylvain Pillet
+
+> Développeur fullstack à Toulouse, spécialisé en Symfony (PHP) et React. Portfolio et présentation des projets.
+
+## Pages
+
+- [Accueil](https://sylvainpillet.com/): présentation et contact rapide
+- [Projets](https://sylvainpillet.com/projets): réalisations web (Symfony, React, API)
+- [Parcours](https://sylvainpillet.com/parcours): expériences et formations
+- [À propos](https://sylvainpillet.com/a-propos): profil et compétences
+- [Contact](https://sylvainpillet.com/contact): formulaire de contact
