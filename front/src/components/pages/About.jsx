@@ -1,6 +1,6 @@
 import React from 'react';
-import arrow from "../../../public/assets/images/arrow.png";
-import me from "../../../public/assets/images/me.png";
+import arrow from "../../../public/assets/images/arrow.webp";
+import me from "../../../public/assets/images/me.webp";
 
 const About = () => {
 
@@ -32,17 +32,19 @@ const About = () => {
                         <img
                             src={arrow}// Update the path as necessary
                             className="arrow"
-                            alt="dessin de flêche"
+                            alt=""
                             width="220"
-                            height="200"
+                            height="142"
                         />
                     </div>
                     <div className="image-wrapper">
                         <img
                             src={me} // Update the path as necessary
                             className="profile"
-                            alt="photo de profil"
+                            alt="Sylvain Pillet, développeur à Toulouse"
                             width="400"
+                            height="487"
+                            loading="lazy"
                         />
                     </div>
                     <div className="tags">

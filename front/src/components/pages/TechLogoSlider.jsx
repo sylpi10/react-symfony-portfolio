@@ -52,6 +52,7 @@ export default function TechLogoSlider({ items = DEFAULT_ITEMS }) {
                                     className="tls-logo"
                                     src={item.src}
                                     alt={item.label}
+                                    height="54"
                                     loading="lazy"
                                     onError={(e) => {
                                         const el = e.currentTarget;
@@ -78,6 +79,7 @@ export default function TechLogoSlider({ items = DEFAULT_ITEMS }) {
                                     className="tls-logo"
                                     src={item.src}
                                     alt={item.label}
+                                    height="54"
                                     loading="lazy"
                                     onError={(e) => {
                                         const el = e.currentTarget;

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../public/assets/images/logo.png";
+import logo from "../../public/assets/images/logo.webp";
 import cv from "../../public/assets/CV_Sylvain_Pillet_fullstack_2026.pdf";
 import CvIcon from "./CvIcon";
 
@@ -16,8 +16,9 @@ const Footer = () => {
                             src={logo}
                             className="logo"
                             title="Accueil"
-                            alt="logo"
+                            alt="Logo Sylvain Pillet"
                             width="40"
+                            height="61"
                         />
                     </a>
                     <div className="text">

@@ -86,3 +86,8 @@ section:not(#home) {
 @import "techSlider";
 @import "contact";
 @import "footer";
+
+// Les attributs width/height des <img> servent à réserver l'espace (CLS), le ratio reste piloté par le CSS
+img {
+    height: auto;
+}

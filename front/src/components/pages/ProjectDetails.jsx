@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getProjectDetails } from "../../service/api.js";
 import { useParams } from "react-router-dom";
+import { toWebp } from "../../service/images.js";
 
 const ProjectDetails = () => {
     const { id } = useParams();
@@ -162,10 +163,12 @@ const ProjectDetails = () => {
                         <div className="computer-container">
                             <div className="computer-img-container">
                                 <img
-                                    src={`/assets/images/projects/${project.detailPic}`}
+                                    src={`/assets/images/projects/${toWebp(project.detailPic)}`}
                                     className="project-image"
-                                    alt="image du site"
+                                    alt={`Aperçu du site ${project.name} sur ordinateur`}
                                     width="800"
+                                    height="1000"
+                                    decoding="async"
                                 />
                             </div>
                         </div>
@@ -174,10 +177,13 @@ const ProjectDetails = () => {
                         <div className="mobile-container">
                             <div className="mobile-img-container">
                                 <img
-                                    src={`/assets/images/projects/${project.detailPicMobile}`}
+                                    src={`/assets/images/projects/${toWebp(project.detailPicMobile)}`}
                                     className="project-image"
-                                    alt="image du site"
+                                    alt={`Aperçu du site ${project.name} sur mobile`}
                                     width="300"
+                                    height="600"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                         </div>

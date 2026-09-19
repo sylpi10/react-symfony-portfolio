@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import webIcon from "../../../public/assets/images/website-icon.svg";
 import React from "react";
+import { toWebp } from "../../service/images";
 
 const project = (props) => {
     const technosItems = props.technos.split(",").slice(0, 2).join(",");
@@ -10,7 +11,7 @@ const project = (props) => {
             <div
                 className="item-bg"
                 style={{
-                    backgroundImage: `url(/assets/images/projects/${props.background})`,
+                    backgroundImage: `url(/assets/images/projects/${toWebp(props.background)})`,
                 }}
             />
             <h3>{props.name}</h3>

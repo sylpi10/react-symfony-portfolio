@@ -1,5 +1,5 @@
 import "../assets/css/nav.scss";
-import logo from "../../public/assets/images/logo.png";
+import logo from "../../public/assets/images/logo.webp";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 
@@ -35,7 +35,7 @@ function NavBar(props) {
             <nav className={`navbar ${isHomePage ? "default-menu-class" : ""} ${isMobileOpen ? "mobile-nav" : ""}`}>
                 <span className="brand">
                     <Link to="/" onClick={handleLinkClick}>
-                        <img src={logo} className="logo" alt="logo" width="39" />
+                        <img src={logo} className="logo" alt="Logo Sylvain Pillet" width="39" height="60" />
                     </Link>
                 </span>
 

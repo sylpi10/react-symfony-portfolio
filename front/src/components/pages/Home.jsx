@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import profilPic from "../../../public/assets/images/avatar.png";
+import profilPic from "../../../public/assets/images/avatar.webp";
 import shape from "../../../public/assets/images/shape.svg";
 import cv from "../../../public/assets/CV_Sylvain_Pillet_fullstack_2026.pdf";
 // import fullstackPic from "../../../public/assets/images/fullstack_dev.png";
@@ -75,8 +75,10 @@ const Home = () => {
                             <div className={`picture-name-container`}>
                                 <img
                                     src={profilPic}
-                                    alt="photo de profil"
+                                    alt="Sylvain Pillet, développeur à Toulouse"
                                     width="300"
+                                    height="347"
+                                    fetchPriority="high"
                                 />
                                 <h2>Sylvain Pillet</h2>
                             </div>
