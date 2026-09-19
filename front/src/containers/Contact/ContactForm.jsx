@@ -37,7 +37,9 @@ const ContactForm = (props) => {
                         <div className={"input-wrapper"}>
                             <input
                                 type="text"
+                                id="name"
                                 name="name"
+                                autoComplete="name"
                                 placeholder=""
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -53,7 +55,9 @@ const ContactForm = (props) => {
                         <div className={"input-wrapper"}>
                             <input
                                 type="email"
+                                id="email"
                                 name="email"
+                                autoComplete="email"
                                 placeholder=""
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -67,6 +71,7 @@ const ContactForm = (props) => {
 
                         <div className={"input-wrapper"}>
                             <textarea
+                                id="message"
                                 name="message"
                                 placeholder=""
                                 rows={4}
