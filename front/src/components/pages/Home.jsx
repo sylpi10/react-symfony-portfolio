@@ -1,8 +1,7 @@
 // import { Link } from "react-router-dom";
 import profilPic from "../../../public/assets/images/avatar.webp";
-import shape from "../../../public/assets/images/shape.svg";
+import shape from "../../../public/assets/images/shape.webp";
 import cv from "../../../public/assets/CV_Sylvain_Pillet_fullstack_2026.pdf";
-// import fullstackPic from "../../../public/assets/images/fullstack_dev.png";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
@@ -133,7 +132,7 @@ const Home = () => {
                         </button>
                     </div>
 
-                    <img className="shape" src={shape} alt="" />
+                    <img className="shape" src={shape} alt="" width="735" height="669" />
                 </div>
             </main>
             {/* <div className="home-description">
