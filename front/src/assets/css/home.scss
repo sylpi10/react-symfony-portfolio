@@ -54,6 +54,7 @@
                     }
                     @media screen and (max-width: 768px) {
                         display: flex;
+                        flex-direction: column;
                         align-items: center;
                         font-size: 2rem;
                         height: fit-content;
@@ -66,9 +67,11 @@
                         br {
                             display: none;
                         }
+                        .cursor {
+                            display: none !important;
+                        }
                     }
                     margin: 0;
-
                     font-family: "effortless", serif;
                     background: -webkit-linear-gradient($yellow 54%, orange);
                     background-clip: text;
