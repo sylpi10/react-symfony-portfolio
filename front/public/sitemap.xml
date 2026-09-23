@@ -4,20 +4,4 @@
     <loc>https://sylvainpillet.com/</loc>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://sylvainpillet.com/projets</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sylvainpillet.com/parcours</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://sylvainpillet.com/a-propos</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://sylvainpillet.com/contact</loc>
-    <priority>0.5</priority>
-  </url>
 </urlset>
