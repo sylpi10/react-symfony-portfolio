@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Parcours from "../components/Parcours";
 import Projects from "../components/Projects";
+import Contact from "../components/Contact";
 import { ProjectProps } from "../types/projects.js";
 
 type HomeProps = {
@@ -24,6 +25,9 @@ export default function Home({ projects }: HomeProps) {
                 <section id="parcours">
                     <Parcours />
                 </section>
+            </section>
+            <section id="contact">
+                <Contact />
             </section>
             <Footer />
         </>

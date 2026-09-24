@@ -17,13 +17,16 @@ export default function ProjectDetails({
 
                 <div className="project-container">
                     <div className="round"></div>
-                    <div className="description">
-                        <div
-                            dangerouslySetInnerHTML={{
-                                __html: project.description,
-                            }}
-                        />
-                    </div>
+                    {project.description && (
+                        <div className="description">
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: project.description,
+                                }}
+                            />
+                        </div>
+                    )}
+
                     <div className="infos">
                         <div className="tecnhos">
                             <p className={"title"}>Boite à outils du projet:</p>

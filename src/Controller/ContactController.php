@@ -2,98 +2,66 @@
 
 namespace App\Controller;
 
-use App\Entity\Contact;
-use App\Form\ContactType;
+use App\Dto\ContactRequest;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Attribute\Route;
+use Nytodev\InertiaBundle\Service\Inertia;
+use App\Entity\Contact;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mime\Email;
 
 class ContactController extends AbstractController
 {
     public function __construct(
         protected MailerInterface $mailer,
-        protected EntityManagerInterface $em
+        protected EntityManagerInterface $em,
+        private readonly Inertia $inertia,
     ) {}
 
-    #[Route('/api/contact', name: 'app_contact', methods: ['POST'])]
-    public function contact(Request $request): JsonResponse
+    #[Route("/contact", name: "app_contact", methods: ["POST"])]
+    public function contact(#[MapRequestPayload] ContactRequest $data): Response
     {
-        $data = json_decode($request->getContent(), true);
-
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            return $this->json([
-                'success' => false,
-                'message' => 'Données JSON invalides.'
-            ], Response::HTTP_BAD_REQUEST);
+        // honeypot rempli = robot : même réponse qu'un succès, sans rien faire
+        if ("" !== $data->website) {
+            $this->inertia->flash(
+                "success",
+                "Message envoyé, je vous réponds vite !",
+            );
+            return $this->redirectToRoute("home");
         }
 
-        // Anti-spam : champ invisible rempli = robot
-        if (!empty($data['website'])) {
-            return $this->json([
-                'success' => true,
-                'message' => 'Formulaire ignoré (anti-spam)',
-            ]);
+        $contact = new Contact()
+            ->setName($data->name)
+            ->setEmail($data->email)
+            ->setMessage($data->message)
+            ->setDate(new \DateTime());
+        $this->em->persist($contact);
+        $this->em->flush();
+
+        try {
+            $this->mailer->send(
+                new Email()
+                    ->to("syl.pillet@hotmail.fr")
+                    ->from("sylpi@sylvainpillet.com")
+                    ->replyTo($data->email)
+                    ->subject("Nouveau message du portfolio – " . $data->name)
+                    ->text($data->message),
+            );
+            $this->inertia->flash(
+                "success",
+                "Message envoyé, je reviens vite vers vous !",
+            );
+        } catch (TransportExceptionInterface) {
+            $this->inertia->flash(
+                "error",
+                "L'envoi a échoué, réessayez un peu plus tard.",
+            );
         }
 
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
-        $form->submit($data);
-
-        // Vérifie la soumission
-        if (!$form->isSubmitted()) {
-            return $this->json([
-                'success' => false,
-                'message' => 'Formulaire non soumis.',
-            ], Response::HTTP_BAD_REQUEST);
-        }
-
-        // Si valide : on envoie le mail et on persiste
-        if ($form->isValid()) {
-            try {
-                $mail = (new TemplatedEmail())
-                    ->to('syl.pillet@hotmail.fr')
-                    ->from('sylpi@sylvainpillet.com')
-                    ->subject('Nouveau message du portfolio – ' . $contact->getEmail())
-                    ->text($contact->getMessage());
-
-                $contact->setDate(new \DateTimeImmutable());
-                $this->em->persist($contact);
-                $this->em->flush();
-
-                $this->mailer->send($mail);
-
-                return $this->json([
-                    'success' => true,
-                    'message' => 'Email envoyé avec succès.'
-                ]);
-            } catch (TransportExceptionInterface $e) {
-                return $this->json([
-                    'success' => false,
-                    'message' => 'Échec de l\'envoi de l\'email.',
-                    'error' => $e->getMessage(),
-                ], Response::HTTP_INTERNAL_SERVER_ERROR);
-            }
-        }
-
-        // Sinon : formulaire invalide, on renvoie les erreurs
-        $errors = [];
-        foreach ($form->getErrors(true) as $error) {
-            $errors[] = [
-                'field' => $error->getOrigin()?->getName(),
-                'message' => $error->getMessage(),
-            ];
-        }
-
-        return $this->json([
-            'success' => false,
-            'message' => 'Validation échouée',
-            'errors' => $errors,
-        ], Response::HTTP_BAD_REQUEST);
+        return $this->redirectToRoute("home");
     }
 }

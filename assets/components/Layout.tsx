@@ -7,7 +7,7 @@ const links = [
     { href: "/#projects", label: "Projects" },
     { href: "/#a-propos", label: "About" },
     { href: "/#parcours", label: "Parcours" },
-    // { href: "/#contact", label: "Contact" },
+    { href: "/#contact", label: "Contact" },
 ];
 
 export default function Layout({ children }: { children: ReactNode }) {
