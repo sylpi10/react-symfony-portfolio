@@ -135,8 +135,7 @@
             background-color: $light-yellow;
             span.info {
                 position: absolute;
-                background: url("/public/assets/images/paint.webp") no-repeat
-                    center;
+                background: url("../public/images/paint.webp") no-repeat center;
                 background-size: contain;
                 width: 200px;
                 height: 200px;
@@ -218,7 +217,7 @@
     }
 }
 
-@-webkit-keyframes bounce {
+@keyframes bounce {
     from,
     to {
         transform: scale(1, 1);

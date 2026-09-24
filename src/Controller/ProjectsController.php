@@ -22,59 +22,35 @@ class ProjectsController extends AbstractController
     public function getProjects(): Response
     {
         try {
-            // Fetch all projects from the database
             $projects = $this->projectRepository->findAll();
-
-            // Format data for JSON response
-            $data = [];
-            foreach ($projects as $project) {
-                $data[] = [
-                    "id" => $project->getId(),
-                    "name" => $project->getName(),
-                    "description" => $project->getDescription(),
-                    "technos" => $project->getTechnos(),
-                    "date" => $project->getDate(),
-                    "weblink" => $project->getWeblink(),
-                    "githublink" => $project->getGithublink(),
-                    "background" => $project->getBackground(),
-                ];
-            }
-            return $this->inertia->render("Home", ["projects" => $data]);
+            return $this->inertia->render(
+                "Home",
+                ["projects" => $projects],
+                ["groups" => ["project:list"]],
+            );
         } catch (\Throwable $e) {
-            // LOG explicitement l'erreur
             error_log("[API PROJECTS ERROR] " . $e->getMessage());
             return $this->inertia->render("Error", [
-                "message" => $e->getMessage(),
+                "message" => "La page n'existe pas",
             ]);
         }
     }
 
-    #[
-        Route(
-            "/api/projects/{id}",
-            name: "api_projects_details",
-            methods: ["GET"],
-        ),
-    ]
+    #[Route("/project/{id}", name: "projects_details", methods: ["GET"])]
     public function getProjectDetails(
         #[MapEntity(id: "id")] Project $project,
     ): Response {
-        // Format data for JSON response
-        // $data = [
-        //     "id" => $project->getId(),
-        //     "name" => $project->getName(),
-        //     "description" => $project->getDescription(),
-        //     "technos" => $project->getTechnos(),
-        //     "date" => $project->getDate(),
-        //     "weblink" => $project->getWeblink(),
-        //     "githublink" => $project->getGithublink(),
-        //     "background" => $project->getBackground(),
-        //     "detailPic" => $project->getDetailPic(),
-        //     "detailPicMobile" => $project->getDetailPicMobile(),
-        // ];
-
-        return $this->inertia->render("ProjectDetails", [
-            "project" => $project,
-        ]);
+        try {
+            return $this->inertia->render(
+                "ProjectDetails",
+                ["project" => $project],
+                ["groups" => ["project:detail"]],
+            );
+        } catch (\Throwable $e) {
+            error_log("[API PROJECTS ERROR] " . $e->getMessage());
+            return $this->inertia->render("Error", [
+                "message" => "La page n'existe pas",
+            ]);
+        }
     }
 }

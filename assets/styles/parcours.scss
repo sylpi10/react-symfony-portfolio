@@ -181,39 +181,39 @@
         }
     }
 
-    .toolkit-wrapper {
-        background-color: $main_color;
-        display: flex;
-        @media screen and (min-width: 768px) {
-            justify-content: flex-start;
-        }
-        @media screen and (max-width: 768px) {
-            flex-direction: column;
-            justify-content: center;
-        }
-        align-items: center;
-        flex-wrap: wrap;
-        .toolkit {
-            margin-left: 60px;
-            width: 23%;
-            min-width: 180px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            background: url("/assets/images/curved_shape.webp") no-repeat center;
-            background-size: contain;
-            @media screen and (max-width: 768px) {
-                margin-left: 0;
-            }
-            span {
-                font-size: 1.6rem;
-                color: $main_color;
-                font-weight: bold;
-                transform: rotate(-12deg);
-            }
-        }
-    }
+    // .toolkit-wrapper {
+    //     background-color: $main_color;
+    //     display: flex;
+    //     @media screen and (min-width: 768px) {
+    //         justify-content: flex-start;
+    //     }
+    //     @media screen and (max-width: 768px) {
+    //         flex-direction: column;
+    //         justify-content: center;
+    //     }
+    //     align-items: center;
+    //     flex-wrap: wrap;
+    //     .toolkit {
+    //         margin-left: 60px;
+    //         width: 23%;
+    //         min-width: 180px;
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         height: 200px;
+    //         background: url("/assets/images/curved_shape.webp") no-repeat center;
+    //         background-size: contain;
+    //         @media screen and (max-width: 768px) {
+    //             margin-left: 0;
+    //         }
+    //         span {
+    //             font-size: 1.6rem;
+    //             color: $main_color;
+    //             font-weight: bold;
+    //             transform: rotate(-12deg);
+    //         }
+    //     }
+    // }
 
     .tag-list {
         @media screen and (min-width: 768px) {

@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "_about";
 
 @font-face {
     font-family: "montserrat";
@@ -90,7 +91,7 @@ img {
 @import "projects";
 @import "projectsDetailsDescription";
 @import "projectsDetailsImages";
-@import "about";
+// @import "_about";
 @import "nav";
 @import "parcours";
 @import "techSlider";

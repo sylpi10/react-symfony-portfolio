@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ProjectRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 class Project
@@ -12,33 +13,43 @@ class Project
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(["project:list", "project:detail"])]
     private ?int $id = null;
 
     #[ORM\Column(length: 50)]
+    #[Groups(["project:list", "project:detail"])]
     private string $name;
 
     #[ORM\Column(length: 255)]
+    #[Groups(["project:list", "project:detail"])]
     private ?string $date = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(["project:list", "project:detail"])]
     private ?string $technos = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(["project:list", "project:detail"])]
     private ?string $weblink = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(["project:list", "project:detail"])]
     private ?string $githublink = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(["project:detail"])]
     private ?string $detailPic = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(["project:list", "project:detail"])]
     private ?string $background = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(["project:detail"])]
     private ?string $description = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    #[Groups(["project:detail"])]
     private ?string $detail_pic_mobile = null;
 
     public function getId(): ?int
@@ -50,8 +61,6 @@ class Project
     {
         return $this->name;
     }
-
-
 
     public function setName(string $name): static
     {
@@ -65,7 +74,7 @@ class Project
         return $this->date;
     }
 
-    public function setDate(string $date): string
+    public function setDate(string $date): static
     {
         $this->date = $date;
 
