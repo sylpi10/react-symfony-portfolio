@@ -1,5 +1,5 @@
-import logo from "../public/images/logo.webp";
-import cv from "../public/images/CV_Sylvain_Pillet_fullstack_2026.pdf";
+import logo from "../images/logo.webp";
+import cv from "../images/CV_Sylvain_Pillet_fullstack_2026.pdf";
 import CvIcon from "./CvIcon";
 
 export default function Footer() {

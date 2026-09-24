@@ -1,11 +1,11 @@
 import { Link, usePage } from "@inertiajs/react";
-import logo from "../public/images/logo.webp";
+import logo from "../images/logo.webp";
 import { useState, useRef, ReactNode } from "react";
 
 const links = [
-    { href: "/", label: "Home" },
-    { href: "/#projects", label: "Projects" },
-    { href: "/#a-propos", label: "About" },
+    // { href: "/", label: "Home" },
+    { href: "/#projects", label: "Projets" },
+    { href: "/#a-propos", label: "À propos" },
     { href: "/#parcours", label: "Parcours" },
     { href: "/#contact", label: "Contact" },
 ];

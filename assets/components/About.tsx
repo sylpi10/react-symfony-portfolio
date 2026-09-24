@@ -1,5 +1,5 @@
 // import arrow from "../images/arrow.webp";
-import me from "../public/images/me.webp";
+import me from "../images/me.webp";
 
 export default function About() {
     const getAge = (birthDate: string): number => {
