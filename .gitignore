@@ -1,20 +1,20 @@
+
 ###> symfony/framework-bundle ###
-portfolioBack/.env
-portfolioBack/.env.dev
-portfolioBack/.env.local
-portfolioBack/.env.local.php
-portfolioBack/.env.*.local
-portfolioBack/config/secrets/prod/prod.decrypt.private.php
-back/config/secrets/prod/prod.decrypt.private.php
-portfolioBack/public/bundles/
-portfolioBack/var/
-portfolioBack/vendor/
-portfolioBack/.idea
-.env.deploy
-### front
-# === Frontend ===
-front/node_modules/
-front/dist/
-front/.env*
-front/.idea
-front/.htaccess
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+/bootstrap/ssr/
+###> pentatrion/vite-bundle ###
+/node_modules/
+/public/build/
+###< pentatrion/vite-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
