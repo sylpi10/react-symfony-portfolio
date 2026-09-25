@@ -30,7 +30,7 @@ export default function Footer() {
                 </div>
                 <div className="links">
                     <a
-                        href="https://www.linkedin.com/in/sylvain-pillet/"
+                        href="https://www.linkedin.com/in/sylvain-pillet"
                         title="Profil Linkedin"
                         target="_blank"
                         rel="noopener noreferrer"
