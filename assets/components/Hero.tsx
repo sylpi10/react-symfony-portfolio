@@ -5,19 +5,22 @@ import { useEffect, useState } from "react";
 
 export default function Hero() {
     const text: string = "Développeur\nFrontend / Fullstack";
-    const [displayedText, setDisplayedText] = useState("");
+    const lines: string[] = text.split("\n");
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
         if (index < text.length) {
-            const timeout = setTimeout(() => {
-                setDisplayedText(text.slice(0, index + 1)); // slice jusqu'à index + 1
-                setIndex(index + 1); // avance index
-            }, 160);
+            const timeout = setTimeout(() => setIndex(index + 1), 160);
 
             return () => clearTimeout(timeout);
         }
     }, [index, text]);
+
+    // position de départ de chaque ligne dans text (+1 pour le \n)
+    const lineStarts: number[] = lines.map((_, i) =>
+        lines.slice(0, i).reduce((n, line) => n + line.length + 1, 0),
+    );
+    const cursorLine: number = lineStarts.filter((start) => start <= index).length - 1;
 
     const [hasScrolledPast, setHasScrolledPast] = useState(false);
 
@@ -39,23 +42,31 @@ export default function Hero() {
                 <div className="hero-area">
                     <div className="presentation">
                         <div className="person">
-                            <h1 className="typewriter">
-                                {/* texte complet dans le HTML pour Google et les lecteurs
-                                    d'écran : l'animation démarre vide côté serveur */}
-                                <span className="visually-hidden">
-                                    {text.replace("\n", " ")}
-                                </span>
-                                {displayedText.split("\n").map((line, i) => (
-                                    <span key={i} aria-hidden="true">
-                                        {line}
-                                        {i !==
-                                            displayedText.split("\n").length -
-                                                1 && <br />}
-                                    </span>
-                                ))}
-                                <span className="cursor" aria-hidden="true">
-                                    |
-                                </span>
+                            {/* texte complet dans le HTML dès le rendu serveur (Google) ;
+                                la partie pas encore tapée est invisible mais occupe déjà sa
+                                place : le titre ne change pas de taille (pas de CLS) */}
+                            <h1
+                                className="typewriter"
+                                aria-label={text.replace("\n", " ")}
+                            >
+                                {lines.map((line, i) => {
+                                    const typed = Math.min(
+                                        Math.max(index - lineStarts[i], 0),
+                                        line.length,
+                                    );
+                                    return (
+                                        <span key={i} aria-hidden="true">
+                                            {line.slice(0, typed)}
+                                            {i === cursorLine && (
+                                                <span className="cursor">|</span>
+                                            )}
+                                            <span className="typewriter-rest">
+                                                {line.slice(typed)}
+                                            </span>
+                                            {i < lines.length - 1 && <br />}
+                                        </span>
+                                    );
+                                })}
                             </h1>
                             <div className="person-description">
                                 <p className="description">

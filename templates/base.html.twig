@@ -62,6 +62,10 @@
             }|json_encode(constant('JSON_UNESCAPED_UNICODE'))|raw }}
         </script>
 
+        {# polices au-dessus de la ligne de flottaison : chargées tôt pour limiter le décalage (CLS) #}
+        <link rel="preload" href="{{ asset('assets/fonts/effortless.woff2', 'vite') }}" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ asset('assets/fonts/Montserrat-Regular.woff2', 'vite') }}" as="font" type="font/woff2" crossorigin>
+
         {% block stylesheets %}
              {{ vite_entry_link_tags('styles') }}
         {% endblock %}

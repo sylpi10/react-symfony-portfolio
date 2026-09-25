@@ -91,6 +91,11 @@
                         background: transparent;
                         animation: blink 1s infinite;
                         margin-left: 4px;
+                        // largeur nette nulle : le curseur ne pousse pas le texte
+                        margin-right: -16px;
+                    }
+                    .typewriter-rest {
+                        visibility: hidden;
                     }
 
                     @keyframes blink {
@@ -133,11 +138,13 @@
                         position: absolute;
                         top: 3px;
                         left: 0;
-                        width: 0;
-                        height: 0;
+                        width: 100%;
+                        height: 100%;
                         border-top: 1px solid $yellow;
                         border-left: 1px solid $yellow;
-                        animation: border-appear 1s forwards;
+                        // révélé par clip-path et non par width/height : pas de CLS
+                        clip-path: inset(0 100% 100% 0);
+                        animation: border-appear-top-left 1s forwards;
                         animation-timing-function: cubic-bezier(
                             0.68,
                             -0.55,
@@ -151,11 +158,12 @@
                         position: absolute;
                         bottom: 3px;
                         right: 0;
-                        width: 0;
-                        height: 0;
+                        width: 100%;
+                        height: 100%;
                         border-bottom: 1px solid $yellow;
                         border-right: 1px solid $yellow;
-                        animation: border-appear 1s forwards;
+                        clip-path: inset(100% 0 0 100%);
+                        animation: border-appear-bottom-right 1s forwards;
                         animation-timing-function: cubic-bezier(
                             0.68,
                             -0.55,
@@ -434,17 +442,26 @@
         stroke: $main_color;
     }
 }
-@keyframes border-appear {
+// trace la bordure : d'abord la ligne horizontale, puis la verticale
+@keyframes border-appear-top-left {
     0% {
-        width: 0;
-        height: 0;
+        clip-path: inset(0 100% 100% 0);
     }
     50% {
-        width: 100%;
-        height: 0;
+        clip-path: inset(0 0 calc(100% - 1px) 0);
     }
     100% {
-        width: 100%;
-        height: 100%;
+        clip-path: inset(0 0 0 0);
+    }
+}
+@keyframes border-appear-bottom-right {
+    0% {
+        clip-path: inset(100% 0 0 100%);
+    }
+    50% {
+        clip-path: inset(calc(100% - 1px) 0 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
     }
 }
