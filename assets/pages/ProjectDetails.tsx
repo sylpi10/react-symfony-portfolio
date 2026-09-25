@@ -186,13 +186,16 @@ export default function ProjectDetails({
                                 href={`/project/${previous.id}`}
                                 className="projects-nav-link previous"
                                 aria-label={`Projet précédent : ${previous.name}`}
-                                style={{
-                                    backgroundImage: `url(${projectImageUrl(previous.background)})`,
-                                }}
                             >
+                                <img
+                                    src={projectImageUrl(previous.background)}
+                                    alt={`${previous.name}`}
+                                />
                                 <div className="labels-wrapper">
                                     <NavArrow direction="previous" />
-                                    <span className="name">{previous.name}</span>
+                                    <span className="name">
+                                        {previous.name}
+                                    </span>
                                 </div>
                             </Link>
                         )}
@@ -201,10 +204,11 @@ export default function ProjectDetails({
                                 href={`/project/${next.id}`}
                                 className="projects-nav-link next"
                                 aria-label={`Projet suivant : ${next.name}`}
-                                style={{
-                                    backgroundImage: `url(${projectImageUrl(next.background)})`,
-                                }}
                             >
+                                <img
+                                    src={projectImageUrl(next.background)}
+                                    alt={`${next.name}`}
+                                />
                                 <div className="labels-wrapper">
                                     <span className="name">{next.name}</span>
                                     <NavArrow direction="next" />

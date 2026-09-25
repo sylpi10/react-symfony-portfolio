@@ -135,18 +135,23 @@
         text-decoration: none;
         width: 300px;
         height: 160px;
-        background-size: cover;
-        background-repeat: no-repeat;
         border-radius: 12px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: ease 0.5s;
+        margin-bottom: 60px;
         &.next {
             margin-left: auto;
             text-align: right;
         }
+        img {
+            width: 300px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            filter: grayscale(1);
+        }
         .labels-wrapper {
             transition: ease 0.5s;
-            backdrop-filter: blur(2px);
             align-items: center;
             padding: 8px;
             display: flex;
@@ -167,9 +172,8 @@
             .nav-arrow.next {
                 transform: translateX(4px);
             }
-            .labels-wrapper {
-                backdrop-filter: blur(0);
-                background-color: rgba(255, 255, 255, 0.3);
+            img {
+                filter: grayscale(0);
             }
         }
         .name {
