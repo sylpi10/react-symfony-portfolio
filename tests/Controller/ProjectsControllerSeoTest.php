@@ -26,5 +26,17 @@ final class ProjectsControllerSeoTest extends WebTestCase
         $person = json_decode($crawler->filter('script[type="application/ld+json"]')->text(), true, flags: \JSON_THROW_ON_ERROR);
         self::assertSame('Person', $person['@type']);
         self::assertSame('Toulouse', $person['address']['addressLocality']);
+        // areaServed n'existe pas sur Person : erreur de validation schema.org
+        self::assertArrayNotHasKey('areaServed', $person);
+    }
+
+    public function testIndexNowKeyFileServesTheKey(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/indexnow.txt');
+
+        self::assertResponseIsSuccessful();
+        self::assertResponseHeaderSame('Content-Type', 'text/plain; charset=UTF-8');
+        self::assertSame($_ENV['INDEXNOW_KEY'], $client->getResponse()->getContent());
     }
 }
