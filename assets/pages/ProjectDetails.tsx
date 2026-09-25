@@ -1,14 +1,22 @@
-import { ProjectDetailsProps } from "../types/projects";
+import { Link } from "@inertiajs/react";
+import { ProjectDetailsProps, ProjectLink } from "../types/projects";
 import { projectImageUrl } from "../lib/images";
 
 export default function ProjectDetails({
     project,
+    previous,
+    next,
 }: {
     project: ProjectDetailsProps;
+    previous: ProjectLink | null;
+    next: ProjectLink | null;
 }) {
     const technosItems = project.technos
         .split(",")
         .map((word: string) => word.trim());
+
+    console.log(project);
+    console.log(previous);
 
     return (
         <main className="section-container projects-container">
@@ -171,7 +179,64 @@ export default function ProjectDetails({
                         </div>
                     </div>
                 </div>
+                {(previous || next) && (
+                    <nav className="projects-nav" aria-label="Autres projets">
+                        {previous && (
+                            <Link
+                                href={`/project/${previous.id}`}
+                                className="projects-nav-link previous"
+                                aria-label={`Projet précédent : ${previous.name}`}
+                                style={{
+                                    backgroundImage: `url(${projectImageUrl(previous.background)})`,
+                                }}
+                            >
+                                <div className="labels-wrapper">
+                                    <NavArrow direction="previous" />
+                                    <span className="name">{previous.name}</span>
+                                </div>
+                            </Link>
+                        )}
+                        {next && (
+                            <Link
+                                href={`/project/${next.id}`}
+                                className="projects-nav-link next"
+                                aria-label={`Projet suivant : ${next.name}`}
+                                style={{
+                                    backgroundImage: `url(${projectImageUrl(next.background)})`,
+                                }}
+                            >
+                                <div className="labels-wrapper">
+                                    <span className="name">{next.name}</span>
+                                    <NavArrow direction="next" />
+                                </div>
+                            </Link>
+                        )}
+                    </nav>
+                )}
             </div>
         </main>
+    );
+}
+
+function NavArrow({ direction }: { direction: "previous" | "next" }) {
+    return (
+        <svg
+            className={`nav-arrow ${direction}`}
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+        >
+            {direction === "previous" ? (
+                <path d="M19 12H5M11 18l-6-6 6-6" />
+            ) : (
+                <path d="M5 12h14M13 6l6 6-6 6" />
+            )}
+        </svg>
     );
 }

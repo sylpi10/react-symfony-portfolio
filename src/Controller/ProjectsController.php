@@ -4,14 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Project;
 use App\Repository\ProjectRepository;
+use App\Service\ProjectMetaDescription;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 // use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Nytodev\InertiaBundle\Service\Inertia;
-
-use function Symfony\Component\String\u;
 
 class ProjectsController extends AbstractController
 {
@@ -26,6 +25,7 @@ class ProjectsController extends AbstractController
     public function __construct(
         protected ProjectRepository $projectRepository,
         private readonly Inertia $inertia,
+        private readonly ProjectMetaDescription $metaDescription,
     ) {}
 
     #[Route("/", name: "home", methods: ["GET"])]
@@ -58,15 +58,21 @@ class ProjectsController extends AbstractController
         #[MapEntity(id: "id")] Project $project,
     ): Response {
         try {
+            $adjacent = $this->projectRepository->findAdjacent($project);
+
             return $this->inertia->render(
                 "ProjectDetails",
                 [
                     "project" => $project,
+                    "previous" => $this->projectLink($adjacent["previous"]),
+                    "next" => $this->projectLink($adjacent["next"]),
                     "seo" => [
                         "title" =>
                             $project->getName() .
                             " – Projet web | Sylvain Pillet",
-                        "description" => $this->projectDescription($project),
+                        "description" => $this->metaDescription->forProject(
+                            $project,
+                        ),
                     ],
                 ],
                 ["groups" => ["project:detail"]],
@@ -80,23 +86,17 @@ class ProjectsController extends AbstractController
         }
     }
 
-    // description en HTML en base : texte brut, coupé pour la meta description
-    private function projectDescription(Project $project): string
+    /**
+     * @return array{id: int, name: string, background: ?string}|null
+     */
+    private function projectLink(?Project $project): ?array
     {
-        $text = html_entity_decode(
-            strip_tags((string) $project->getDescription()),
-        );
-        if ("" === trim($text)) {
-            $text = sprintf(
-                "Projet %s réalisé par Sylvain Pillet, développeur web freelance à Toulouse : %s.",
-                $project->getName(),
-                $project->getTechnos(),
-            );
-        }
-
-        return u($text)
-            ->collapseWhitespace()
-            ->truncate(155, "…", false)
-            ->toString();
+        return $project
+            ? [
+                "id" => $project->getId(),
+                "name" => $project->getName(),
+                "background" => $project->getBackground(),
+            ]
+            : null;
     }
 }

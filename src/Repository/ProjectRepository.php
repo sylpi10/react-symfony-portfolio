@@ -16,6 +16,39 @@ class ProjectRepository extends ServiceEntityRepository
         parent::__construct($registry, Project::class);
     }
 
+    /**
+     * Projets précédent et suivant dans l'ordre d'affichage de l'accueil,
+     * en boucle : le premier et le dernier projet se suivent.
+     *
+     * @return array{previous: ?Project, next: ?Project}
+     */
+    public function findAdjacent(Project $project): array
+    {
+        $previous = $this->createQueryBuilder('p')
+            ->andWhere('p.id < :id')
+            ->setParameter('id', $project->getId())
+            ->orderBy('p.id', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ?? $this->findOneBy([], ['id' => 'DESC']);
+
+        $next = $this->createQueryBuilder('p')
+            ->andWhere('p.id > :id')
+            ->setParameter('id', $project->getId())
+            ->orderBy('p.id', 'ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ?? $this->findOneBy([], ['id' => 'ASC']);
+
+        // un seul projet en base : pas de navigation vers lui-même
+        return [
+            'previous' => $previous === $project ? null : $previous,
+            'next' => $next === $project ? null : $next,
+        ];
+    }
+
     //    /**
     //     * @return Project[] Returns an array of Project objects
     //     */

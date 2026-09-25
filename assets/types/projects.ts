@@ -13,3 +13,5 @@ export type ProjectDetailsProps = Omit<ProjectProps, "background"> & {
     detailPic: string;
     detail_pic_mobile: string | null;
 };
+
+export type ProjectLink = Pick<ProjectProps, "id" | "name" | "background">;
