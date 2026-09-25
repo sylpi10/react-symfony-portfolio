@@ -1,5 +1,5 @@
-import Project from "./Project.jsx";
-import { ProjectProps } from "../types/projects.js";
+import Project from "../ui/Project";
+import { ProjectProps } from "../../types/projects";
 
 export default function Projects({ projects }: { projects: ProjectProps[] }) {
     return (

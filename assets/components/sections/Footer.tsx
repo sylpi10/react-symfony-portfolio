@@ -1,6 +1,6 @@
-import logo from "../images/logo.webp";
-import cv from "../images/CV_Sylvain_Pillet_fullstack_2026.pdf";
-import CvIcon from "./CvIcon";
+import logo from "../../static/images/logo.webp";
+import cv from "../../static/documents/CV_Sylvain_Pillet_fullstack_2026.pdf";
+import CvIcon from "../ui/CvIcon";
 
 export default function Footer() {
     const today: Date = new Date();

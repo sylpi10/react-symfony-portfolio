@@ -1,5 +1,5 @@
 import { Link, usePage } from "@inertiajs/react";
-import logo from "../images/logo.webp";
+import logo from "../static/images/logo.webp";
 import { useState, useRef, ReactNode } from "react";
 
 const links = [

@@ -1,6 +1,6 @@
-import profilPic from "../images/avatar.webp";
-import shape from "../images/shape.webp";
-import cv from "../images/CV_Sylvain_Pillet_fullstack_2026.pdf";
+import profilPic from "../../static/images/avatar.webp";
+import shape from "../../static/images/shape.webp";
+import cv from "../../static/documents/CV_Sylvain_Pillet_fullstack_2026.pdf";
 import { useEffect, useState } from "react";
 
 export default function Hero() {

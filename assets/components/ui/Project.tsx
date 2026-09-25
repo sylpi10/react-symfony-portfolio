@@ -1,7 +1,7 @@
 // import webIcon from "../../../public/assets/images/website-icon.svg";
 import { Link } from "@inertiajs/react";
-import { ProjectProps } from "../types/projects.js";
-import { projectImageUrl } from "../utils/images";
+import { ProjectProps } from "../../types/projects";
+import { projectImageUrl } from "../../lib/images";
 
 export default function Project({
     project,

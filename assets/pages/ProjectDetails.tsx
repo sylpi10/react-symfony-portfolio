@@ -1,5 +1,5 @@
-import { ProjectDetailsProps } from "../types/projects.js";
-import { projectImageUrl } from "../utils/images.js";
+import { ProjectDetailsProps } from "../types/projects";
+import { projectImageUrl } from "../lib/images";
 
 export default function ProjectDetails({
     project,

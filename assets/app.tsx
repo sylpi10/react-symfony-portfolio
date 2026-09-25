@@ -1,6 +1,6 @@
 import { createInertiaApp, router } from "@inertiajs/react";
-import { resolvePage } from "./resolvePage";
-import Layout from "./components/Layout";
+import { resolvePage } from "./lib/resolvePage";
+import Layout from "./layouts/Layout";
 
 createInertiaApp({
     resolve: resolvePage,
