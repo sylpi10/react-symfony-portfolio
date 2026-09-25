@@ -10,6 +10,10 @@ endif
 PHP ?= php
 COMPOSER ?= composer
 
+ifeq ($(strip $(APP_PATH)),)
+$(error APP_PATH est vide : sans lui, rsync --delete viserait tout le home du serveur)
+endif
+
 SSH = ssh $(SERVER_USER)@$(SERVER_HOST)
 CONSOLE = cd ~/$(APP_PATH) && $(PHP) bin/console --env=prod --no-interaction
 
@@ -27,6 +31,7 @@ RSYNC_EXCLUDES = \
 	--exclude=/.env.*.local \
 	--exclude=/.env.deploy \
 	--exclude=/.phpunit.cache/ \
+	--exclude=/tmp/ \
 	--exclude=/phpunit.xml
 
 help:
@@ -51,3 +56,5 @@ remote:
 	$(SSH) 'cd ~/$(APP_PATH) && APP_ENV=prod $(COMPOSER) install --no-dev --optimize-autoloader --classmap-authoritative --no-interaction'
 	$(SSH) '$(CONSOLE) doctrine:migrations:migrate --allow-no-migration'
 	$(SSH) '$(CONSOLE) cache:clear'
+	# redémarre l'app Node SSR (Passenger) si elle est configurée dans cPanel
+	$(SSH) 'mkdir -p ~/$(APP_PATH)/tmp && touch ~/$(APP_PATH)/tmp/restart.txt'

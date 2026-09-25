@@ -7,7 +7,8 @@ export default defineConfig({
     base: "/build/",
     publicDir: false,
     ssr: {
-        noExternal: ["@inertiajs/react"],
+        // bundle autonome : aucun node_modules nécessaire sur le serveur
+        noExternal: true,
     },
     build: {
         outDir: "bootstrap/ssr",

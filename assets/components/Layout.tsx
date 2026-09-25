@@ -11,10 +11,11 @@ const links = [
 ];
 
 export default function Layout({ children }: { children: ReactNode }) {
-    const isHomePage = location.pathname === "/";
+    const { url } = usePage();
+    // url d'Inertia plutôt que window.location, indisponible côté SSR (Node)
+    const isHomePage = url.split(/[?#]/)[0] === "/";
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const headerRef = useRef(null);
-    const { url } = usePage();
 
     // Ferme le menu mobile quand un lien est cliqué
     const handleLinkClick = () => {
