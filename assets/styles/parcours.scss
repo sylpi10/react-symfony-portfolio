@@ -48,7 +48,6 @@
                     //}
                     ul.tools {
                         display: flex;
-                        justify-content: center;
                         gap: 12px;
                         flex-wrap: wrap;
                         li {
@@ -85,15 +84,17 @@
                     }
                     .description {
                         margin-bottom: 8px;
-                        ul.tasks {
+                        .tasks {
                             background-color: lighten(#f7f1b5, 12%);
                             width: fit-content;
                             padding: 12px 20px;
                             border-radius: 16px;
                             font-size: 1.2rem;
                             line-height: 1.6rem;
+                            max-width: 74%;
                             @media screen and (max-width: 768px) {
                                 text-align: center;
+                                max-width: 100%;
                             }
                         }
                     }
@@ -140,8 +141,11 @@
                             border-right-style: solid;
                         }
                     }
-                    ul.tasks {
+                    .tasks {
                         margin-left: auto;
+                    }
+                    .tools {
+                        justify-content: flex-end;
                     }
                 }
                 //even number borders
@@ -163,8 +167,11 @@
                             border-left-style: solid;
                         }
                     }
-                    ul.tasks {
+                    .tasks {
                         margin-right: auto;
+                    }
+                    .tools {
+                        justify-content: flex-start;
                     }
                 }
                 //handle first and last

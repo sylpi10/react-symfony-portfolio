@@ -53,10 +53,10 @@ export default function About() {
                         </div>
                         <div className="tags">
                             <ul>
-                                <li>Conception </li>
-                                <li>Développement Back-end</li>
                                 <li>Développement Front-end</li>
-                                <li>Git Workflow</li>
+                                <li>Développement Fullstack</li>
+                                <li>Mise en production et hébergement</li>
+                                <li>SEO / performances</li>
                             </ul>
                         </div>
                     </div>

@@ -13,29 +13,31 @@ export default function Parcours() {
                                 <h2>Développeur freelance</h2>
                                 <h3>Freelance</h3>
                                 <div className="description">
-                                    <ul className="tasks">
-                                        <li>
-                                            Développement fullstack
-                                            Symfony-React
-                                        </li>
-                                        <li>
-                                            Développement fullstack Next-Node
-                                        </li>
-                                        <li>
-                                            Développement frontend Twig, React,
-                                        </li>
-                                        <li>
-                                            UI/UX, performances, SEO, &
-                                            accessibilité
-                                        </li>
-                                        <li>Clean architecture</li>
-                                        <li>Déploiement</li>
-                                    </ul>
+                                    <div className="tasks">
+                                        <p>
+                                            Développement de sites web et
+                                            applications web après échanges et
+                                            comprehension des besoins du client
+                                        </p>
+                                        <p>
+                                            Mise en ligne, gestion de
+                                            l'hébergment
+                                        </p>
+                                        <p>
+                                            Optimisation SEO via search console
+                                            et ahrefs
+                                        </p>
+                                        <p>
+                                            Optimisation des performances selon
+                                            les résultats pagespeed insights
+                                        </p>
+                                    </div>
                                 </div>
                                 <ul className="tools">
                                     <li>React</li>
                                     <li>Symfony</li>
                                     <li>Next</li>
+                                    <li>InertiaJs</li>
                                     <li>Sql</li>
                                     <li>Docker</li>
                                     <li>Html</li>
@@ -51,19 +53,43 @@ export default function Parcours() {
                                 <h2>Développeur web</h2>
                                 <h3>Ludilabel</h3>
                                 <div className="description">
-                                    <ul className="tasks">
-                                        <li>
-                                            Développement fullstack
-                                            Symfony-React
-                                        </li>
-                                        <li>Développement frontend Magento</li>
-                                        <li>
-                                            UI/UX, performances, SEO, &
-                                            accessibilité
-                                        </li>
-                                        <li>Clean architecture</li>
-                                        <li>Déploiement</li>
-                                    </ul>
+                                    <div className="tasks">
+                                        <div>
+                                            <p>
+                                                Développement front-end du
+                                                nouveau site en migration sur
+                                                Magento 2 : Optimisations de
+                                                performances, web core vitals,
+                                                Seo, Accessibilité,
+                                                optimisations UX/UI.
+                                            </p>
+                                            <p>
+                                                Gestion, correction des erreurs
+                                                en lien avec le SAV.
+                                            </p>
+                                            <p>
+                                                Conception et Développement
+                                                d'une application de
+                                                personnalisation d'objets avec
+                                                Symfony et React.
+                                            </p>
+                                            <p>
+                                                Architecture hexagonale, gestion
+                                                des states avec Redux,
+                                                intégration selon les maquettes.
+                                            </p>
+                                            <p>
+                                                Mises à jours des versions de
+                                                Symfony et React.
+                                            </p>
+                                            <p>
+                                                Améliorations front-end du site
+                                                existant sur Magento 1.
+                                                Développement, code reviews,
+                                                mises en lignes.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <ul className="tools">
                                     <li>Php</li>
