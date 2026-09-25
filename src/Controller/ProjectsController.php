@@ -16,7 +16,7 @@ use function Symfony\Component\String\u;
 class ProjectsController extends AbstractController
 {
     private const string HOME_TITLE = "Sylvain Pillet – Développeur Frontend / fullstack freelance à Toulouse";
-    private const string HOME_DESCRIPTION = "Développeur web freelance à Toulouse, spécialisé React & Symfony. Sites et applications rapides, accessibles et optimisés SEO, partout en France.";
+    private const string HOME_DESCRIPTION = "Développeur web freelance basé à Toulouse, 5 ans d’expérience en e-commerce. Frontend, UI/UX et interfaces modernes, sans négliger le backend.";
     private const array ERROR_SEO = [
         "title" => "Page introuvable | Sylvain Pillet",
         "description" => self::HOME_DESCRIPTION,

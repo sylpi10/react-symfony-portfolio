@@ -17,8 +17,8 @@ final class ProjectsControllerSeoTest extends WebTestCase
         $crawler = $client->request('GET', '/');
 
         self::assertResponseIsSuccessful();
-        self::assertSelectorTextSame('title', 'Sylvain Pillet – Développeur React & Frontend freelance à Toulouse');
-        self::assertStringContainsString('freelance à Toulouse', $crawler->filter('meta[name="description"]')->attr('content'));
+        self::assertSelectorTextSame('title', 'Sylvain Pillet – Développeur Frontend / fullstack freelance à Toulouse');
+        self::assertStringContainsString('freelance basé à Toulouse', $crawler->filter('meta[name="description"]')->attr('content'));
         self::assertSame('http://localhost/', $crawler->filter('link[rel="canonical"]')->attr('href'));
         self::assertSame('http://localhost/images/sylvain-pillet.jpg', $crawler->filter('meta[property="og:image"]')->attr('content'));
         self::assertSame('/favicon.ico', $crawler->filter('link[rel="icon"]')->attr('href'));
