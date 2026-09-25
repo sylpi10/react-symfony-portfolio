@@ -61,6 +61,5 @@ RewriteRule ^ index.php [QSA,L]
     Header always set X-Content-Type-Options "nosniff"
     Header always set Cross-Origin-Opener-Policy "same-origin"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    # max-age court pour commencer, à monter (31536000) une fois validé
-    Header always set Strict-Transport-Security "max-age=86400"
+    Header always set Strict-Transport-Security "max-age=31536000"
 </IfModule>

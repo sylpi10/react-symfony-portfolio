@@ -1,4 +1,6 @@
 //details page
+@use "variables" as *;
+
 .project-container {
     margin: 0 60px;
     display: flex;
@@ -108,9 +110,8 @@
         justify-content: center;
         gap: 8px;
         flex-wrap: wrap;
-        button.button-link {
+        .button-link {
             border: solid 2px $yellow;
         }
     }
 }
-

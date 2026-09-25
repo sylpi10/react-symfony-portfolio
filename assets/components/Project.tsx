@@ -28,7 +28,7 @@ export default function Project({
             </div>
             <div className="links-wrapper">
                 {project.weblink && (
-                    <button className={"button-link"}>
+                    <div className={"button-link"}>
                         <a
                             href={project.weblink}
                             target="_blank"
@@ -72,10 +72,10 @@ export default function Project({
                             </svg>
                             <span> Site</span>
                         </a>
-                    </button>
+                    </div>
                 )}
                 {project.githublink && (
-                    <button className="button-link">
+                    <div className="button-link">
                         <a
                             href={project.githublink}
                             target="_blank"
@@ -117,9 +117,9 @@ export default function Project({
                             </svg>
                             <span>Github</span>
                         </a>
-                    </button>
+                    </div>
                 )}
-                <button className="button-link">
+                <div className="button-link">
                     <Link
                         href={`/project/${project.id}`}
                         className="see-more"
@@ -163,7 +163,7 @@ export default function Project({
                         </svg>
                         <span>Détails</span>
                     </Link>
-                </button>
+                </div>
             </div>
         </div>
     );

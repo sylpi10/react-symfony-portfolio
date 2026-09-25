@@ -1,5 +1,16 @@
-@use "./variables" as *;
-@use "_about";
+@use "variables" as *;
+@use "home";
+
+@use "button";
+@use "projects";
+@use "projectsDetailsDescription";
+@use "projectsDetailsImages";
+@use "about";
+@use "nav";
+@use "parcours";
+// @use "techSlider";
+@use "contact";
+@use "footer";
 
 @font-face {
     font-family: "montserrat";
@@ -85,15 +96,3 @@ section:not(#home) {
 img {
     height: auto;
 }
-
-@import "home";
-@import "button";
-@import "projects";
-@import "projectsDetailsDescription";
-@import "projectsDetailsImages";
-// @import "_about";
-@import "nav";
-@import "parcours";
-@import "techSlider";
-@import "contact";
-@import "footer";
