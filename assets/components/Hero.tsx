@@ -40,15 +40,22 @@ export default function Hero() {
                     <div className="presentation">
                         <div className="person">
                             <h1 className="typewriter">
+                                {/* texte complet dans le HTML pour Google et les lecteurs
+                                    d'écran : l'animation démarre vide côté serveur */}
+                                <span className="visually-hidden">
+                                    {text.replace("\n", " ")}
+                                </span>
                                 {displayedText.split("\n").map((line, i) => (
-                                    <span key={i}>
+                                    <span key={i} aria-hidden="true">
                                         {line}
                                         {i !==
                                             displayedText.split("\n").length -
                                                 1 && <br />}
                                     </span>
                                 ))}
-                                <span className="cursor">|</span>
+                                <span className="cursor" aria-hidden="true">
+                                    |
+                                </span>
                             </h1>
                             <div className="person-description">
                                 <p className="description">
